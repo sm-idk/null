@@ -101,8 +101,7 @@
     };
 
     settings.binds = with config.lib.niri.actions; {
-      "Super+Q".action = spawn "${pkgs.ghostty}/bin/ghostty";
-      # "Super+R".action = spawn "gauntlet";
+      "Super+Q".action = spawn "ghostty";
       "Super+R".action = spawn "vicinae";
       "Super+E".action = spawn "nautilus";
       "Super+C".action = close-window;
