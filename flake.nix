@@ -4,6 +4,7 @@
   inputs = {
     # First‑party (official)
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # Home‑manager
@@ -33,6 +34,24 @@
     stylix = {
       url = "github:nix-community/stylix/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch
+
+    ignis = {
+      url = "github:ignis-sh/ignis";
+      inputs.nixpkgs.follows = "nixpkgs"; # recommended
+    };
+
+    quickshell = {
+      url = "github:outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.quickshell.follows = "quickshell"; # Use same quickshell version
     };
 
     zen-browser = {
@@ -68,6 +87,8 @@
       vicinae,
       spicetify-nix,
       nur,
+      noctalia,
+      nix-flatpak,
       zen-browser,
       ...
     }@inputs:
@@ -117,6 +138,8 @@
             chaotic.nixosModules.nyx-cache
             chaotic.nixosModules.nyx-overlay
             chaotic.nixosModules.nyx-registry
+
+            nix-flatpak.nixosModules.nix-flatpak
           ];
         };
 
