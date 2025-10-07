@@ -102,7 +102,7 @@
 
     settings.binds = with config.lib.niri.actions; {
       "Super+Q".action = spawn "ghostty";
-      "Super+R".action = spawn "vicinae";
+      "Super+R".action = spawn "vicinae" "toggle";
       "Super+E".action = spawn "nautilus";
       "Super+C".action = close-window;
       "Super+M".action = quit;
