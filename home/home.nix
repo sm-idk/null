@@ -1,17 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   imports = [
-    ./modules/chromium.nix
-    ./modules/git.nix
-    ./modules/keepassxc.nix
-    ./modules/mako.nix
-    ./modules/niri.nix
-    ./modules/spicetify.nix
-    ./modules/stylix.nix
-    ./modules/vicinae.nix
-    ./modules/waybar.nix
-    ./modules/zed.nix
-    ./modules/zen.nix
+    inputs.self.homeModules
   ];
 
   home.packages = builtins.attrValues {

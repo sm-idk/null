@@ -94,6 +94,8 @@
     }@inputs:
 
     {
+      nixosModules = import ./modules/core;
+      homeModules = import ./home/modules;
       nixosConfigurations = {
         null = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
