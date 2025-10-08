@@ -99,7 +99,13 @@
         }
       ];
     };
-
+    settings.spawn-at-startup = [
+      {
+        command = [
+          "noctalia-shell"
+        ];
+      }
+    ];
     settings.binds = with config.lib.niri.actions; {
       "Super+Q".action = spawn "ghostty";
       "Super+R".action = spawn "vicinae" "toggle";
