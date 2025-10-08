@@ -11,6 +11,7 @@
       signal-desktop
       equicord
       bottles
+      ghostty
       equibop
       rpcs3
       btop

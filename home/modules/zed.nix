@@ -1,6 +1,5 @@
 {
   pkgs,
-  chaotic,
   ...
 }:
 {
@@ -14,7 +13,7 @@
       ;
   };
   programs.zed-editor.enable = true;
-  programs.zed-editor.package = chaotic.packages.${pkgs.system}.zed-editor_git;
+  programs.zed-editor.package = pkgs.zed-editor;
   programs.zed-editor.extensions = [
     "nix"
     "xml"

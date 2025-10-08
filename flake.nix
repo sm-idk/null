@@ -38,19 +38,14 @@
 
     nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch
 
-    ignis = {
-      url = "github:ignis-sh/ignis";
-      inputs.nixpkgs.follows = "nixpkgs"; # recommended
-    };
-
     quickshell = {
       url = "github:outfoxxed/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
       inputs.quickshell.follows = "quickshell"; # Use same quickshell version
     };
 
@@ -58,11 +53,6 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
-    };
-
-    gauntlet = {
-      url = "github:project-gauntlet/gauntlet/v16";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     vicinae = {
@@ -83,7 +73,6 @@
       stylix,
       niri,
       chaotic,
-      gauntlet,
       vicinae,
       spicetify-nix,
       nur,
@@ -93,6 +82,51 @@
       ...
     }@inputs:
 
+    let
+      pkgsUnstable = (
+        { config, ... }:
+        {
+          _module.args.pkgsUnstable = import inputs.nixpkgs-unstable {
+            system = "x86_64-linux";
+            config = config.nixpkgs.config;
+          };
+        }
+      );
+
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        users.bruno = ./home/home.nix;
+        extraSpecialArgs = {
+          inherit
+            niri
+            stylix
+            vicinae
+            spicetify-nix
+            chaotic
+            nur
+            noctalia
+            zen-browser
+            ;
+        };
+      };
+
+      nixosModules = [
+        inputs.home-manager.nixosModules.home-manager
+        stylix.nixosModules.stylix
+
+        niri.nixosModules.niri
+
+        nur.modules.nixos.default
+
+        chaotic.nixosModules.nyx-cache
+        chaotic.nixosModules.nyx-overlay
+        chaotic.nixosModules.nyx-registry
+
+        nix-flatpak.nixosModules.nix-flatpak
+      ];
+    in
+
     {
       nixosModules = import ./modules/core;
       homeModules = import ./home/modules;
@@ -101,94 +135,20 @@
           system = "x86_64-linux";
           modules = [
             ./hosts/null/configuration.nix
-            (
-              { config, ... }:
-              {
-                _module.args.pkgsUnstable = import inputs.nixpkgs-unstable {
-                  system = "x86_64-linux";
-                  config = config.nixpkgs.config;
-                };
-              }
-            )
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.bruno = ./home/home.nix;
-                extraSpecialArgs = {
-                  inherit
-                    niri
-                    stylix
-                    gauntlet
-                    vicinae
-                    spicetify-nix
-                    chaotic
-                    nur
-                    zen-browser
-                    ;
-                };
-              };
-            }
-            stylix.nixosModules.stylix
-
-            niri.nixosModules.niri
-
-            nur.modules.nixos.default
-
-            chaotic.nixosModules.nyx-cache
-            chaotic.nixosModules.nyx-overlay
-            chaotic.nixosModules.nyx-registry
-
-            nix-flatpak.nixosModules.nix-flatpak
-          ];
+            pkgsUnstable
+            home-manager
+          ]
+          ++ nixosModules;
         };
 
         ledatel = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ./hosts/ledatel/configuration.nix
-            (
-              { config, ... }:
-              {
-                _module.args.pkgsUnstable = import inputs.nixpkgs-unstable {
-                  system = "x86_64-linux";
-                  config = config.nixpkgs.config;
-                };
-              }
-            )
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.bruno = ./home/home.nix;
-                extraSpecialArgs = {
-                  inherit
-                    niri
-                    stylix
-                    gauntlet
-                    vicinae
-                    spicetify-nix
-                    chaotic
-                    nur
-                    zen-browser
-                    ;
-                };
-              };
-            }
-            stylix.nixosModules.stylix
-
-            niri.nixosModules.niri
-
-            nur.modules.nixos.default
-
-            chaotic.nixosModules.nyx-cache
-            chaotic.nixosModules.nyx-overlay
-            chaotic.nixosModules.nyx-registry
-          ];
+            pkgsUnstable
+            home-manager
+          ]
+          ++ nixosModules;
         };
       };
     };
