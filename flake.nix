@@ -26,11 +26,6 @@
       url = "github:sodiboo/niri-flake";
     };
 
-    nix-mineral = {
-      url = "github:cynicsketch/nix-mineral";
-      flake = false;
-    };
-
     stylix = {
       url = "github:nix-community/stylix/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";

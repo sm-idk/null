@@ -1,6 +1,5 @@
 _: {
   imports = [
-    # "${nix-mineral}/nix-mineral.nix"
     ./networking.nix
     ./hardware-acceleration.nix
     ./hardware-configuration.nix

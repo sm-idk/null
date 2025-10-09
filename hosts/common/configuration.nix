@@ -1,7 +1,6 @@
 { inputs, ... }:
 {
   imports = [
-    # "${nix-mineral}/nix-mineral.nix"
     ./networking.nix
     inputs.self.nixosModules
   ];
