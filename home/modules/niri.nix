@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}:
+{ config, pkgs, ... }:
 {
   # imports = [ niri.homeModules.config ];
   home.packages = builtins.attrValues {

@@ -1,10 +1,28 @@
-_: {
+{ inputs, pkgsUnstable, ... }:
+{
   imports = [
     ./hardware.nix
     ./hardware-configuration.nix
+    inputs.self.nixosModules
 
-    ../../modules/core/steam.nix
+    inputs.chaotic.nixosModules.nyx-cache
+    inputs.chaotic.nixosModules.nyx-overlay
+    inputs.chaotic.nixosModules.nyx-registry
+    inputs.home-manager.nixosModules.home-manager
+    inputs.niri.nixosModules.niri
+    inputs.nix-flatpak.nixosModules.nix-flatpak
+    inputs.nur.modules.nixos.default
+    inputs.stylix.nixosModules.stylix
   ];
+
+  nixos.steam.enable = true;
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.bruno = ../../home/home.nix;
+    extraSpecialArgs = { inherit inputs pkgsUnstable; };
+  };
 
   networking.hostName = "null";
 

@@ -1,8 +1,7 @@
 _: {
   imports = [
-    ./chromium.nix
+    ./chromium
     ./git.nix
-    ./ignix.nix
     ./keepassxc.nix
     ./mako.nix
     ./niri.nix
@@ -10,7 +9,7 @@ _: {
     ./spicetify.nix
     ./stylix.nix
     ./vicinae.nix
-    ./waybar.nix
+    ./waybar
     ./zed.nix
     ./zen.nix
   ];

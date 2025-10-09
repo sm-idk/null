@@ -1,12 +1,9 @@
-{ spicetify-nix, ... }:
+{ inputs, ... }:
 {
-  imports = [ spicetify-nix.homeManagerModules.default ];
+  imports = [ inputs.spicetify-nix.homeManagerModules.default ];
   programs.spicetify.enable = true;
   programs.spicetify.enabledExtensions = builtins.attrValues {
-    inherit (spicetify-nix.legacyPackages.x86_64-linux.extensions)
-      # NO❗❗❗ 🙀 😾 HOW WILL SPOTIFY MAKE MONEY FROM THEIR
-      # AI-GENERATED SONGS AND KEEP ALL THE PROFITS FOR THEMSELVES?!
-      # *(Allegedly)*
+    inherit (inputs.spicetify-nix.legacyPackages.x86_64-linux.extensions)
       adblock
       beautifulLyrics # Apple Music like Lyrics
       copyLyrics

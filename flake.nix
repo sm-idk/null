@@ -61,90 +61,9 @@
     };
   };
 
-  outputs =
-    {
-      nixpkgs,
-      home-manager,
-      stylix,
-      niri,
-      chaotic,
-      vicinae,
-      spicetify-nix,
-      nur,
-      noctalia,
-      nix-flatpak,
-      zen-browser,
-      ...
-    }@inputs:
-
-    let
-      pkgsUnstable = (
-        { config, ... }:
-        {
-          _module.args.pkgsUnstable = import inputs.nixpkgs-unstable {
-            system = "x86_64-linux";
-            config = config.nixpkgs.config;
-          };
-        }
-      );
-
-      home-manager = {
-        useGlobalPkgs = true;
-        useUserPackages = true;
-        users.bruno = ./home/home.nix;
-        extraSpecialArgs = {
-          inherit
-            niri
-            stylix
-            vicinae
-            spicetify-nix
-            chaotic
-            nur
-            noctalia
-            zen-browser
-            ;
-        };
-      };
-
-      nixosModules = [
-        inputs.home-manager.nixosModules.home-manager
-        stylix.nixosModules.stylix
-
-        niri.nixosModules.niri
-
-        nur.modules.nixos.default
-
-        chaotic.nixosModules.nyx-cache
-        chaotic.nixosModules.nyx-overlay
-        chaotic.nixosModules.nyx-registry
-
-        nix-flatpak.nixosModules.nix-flatpak
-      ];
-    in
-
-    {
-      nixosModules = import ./modules/core;
-      homeModules = import ./home/modules;
-      nixosConfigurations = {
-        null = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            ./hosts/null/configuration.nix
-            pkgsUnstable
-            home-manager
-          ]
-          ++ nixosModules;
-        };
-
-        ledatel = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            ./hosts/ledatel/configuration.nix
-            pkgsUnstable
-            home-manager
-          ]
-          ++ nixosModules;
-        };
-      };
-    };
+  outputs = inputs: {
+    nixosModules = import ./modules/core;
+    homeModules = import ./home/modules;
+    nixosConfigurations = import ./hosts { inherit inputs; };
+  };
 }

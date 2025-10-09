@@ -1,15 +1,28 @@
-_: {
+{ inputs, pkgsUnstable, ... }:
+{
   imports = [
     ./networking.nix
     ./hardware-acceleration.nix
     ./hardware-configuration.nix
 
-    ../../modules/core/audio.nix
-    ../../modules/core/mandatory.nix
-    ../../modules/core/nix.nix
-    # ../../modules/core/steam.nix
-    ../../modules/core/uwsm.nix
+    inputs.self.nixosModules
+
+    inputs.chaotic.nixosModules.nyx-cache
+    inputs.chaotic.nixosModules.nyx-overlay
+    inputs.chaotic.nixosModules.nyx-registry
+    inputs.home-manager.nixosModules.home-manager
+    inputs.niri.nixosModules.niri
+    inputs.nix-flatpak.nixosModules.nix-flatpak
+    inputs.nur.modules.nixos.default
+    inputs.stylix.nixosModules.stylix
   ];
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.bruno = ../../home/home.nix;
+    extraSpecialArgs = { inherit inputs pkgsUnstable; };
+  };
 
   networking.hostName = "ledatel";
 

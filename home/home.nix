@@ -1,8 +1,6 @@
 { pkgs, inputs, ... }:
 {
-  imports = [
-    inputs.self.homeModules
-  ];
+  imports = [ inputs.self.homeModules ];
 
   home.packages = builtins.attrValues {
     inherit (pkgs)
