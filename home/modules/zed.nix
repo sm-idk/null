@@ -14,10 +14,7 @@
   programs.zed-editor.extensions = [
     "nix"
     "xml"
-    "typos"
     "cspell"
-    "biome"
-    "unicode"
     "csv"
     "toml"
     "yaml"
@@ -41,6 +38,8 @@
     ];
     icon_theme = "Material Icon Theme";
 
+    disable_ai = true;
+
     restore_on_startup = "none";
     edit_predictions = {
       mode = "subtle";
@@ -58,15 +57,6 @@
             edit_file = true;
             diagnostics = true;
             terminal = false;
-          };
-          enable_all_context_servers = false;
-          context_servers = {
-            mcp-server-context7 = {
-              tools = {
-                resolve-library-id = true;
-                get-library-docs = true;
-              };
-            };
           };
         };
       };

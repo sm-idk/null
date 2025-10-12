@@ -1,5 +1,5 @@
 {
-  description = "A multi‑system flake that pulls in the listed third‑party flakes";
+  description = " A very bad attempt at making a nice personal NixOS config ";
 
   inputs = {
     # First‑party (official)
