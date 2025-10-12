@@ -1,16 +1,16 @@
 _: {
   imports = [
     ./chromium
+    # ./waybar
     ./git.nix
     ./keepassxc.nix
-    ./mako.nix
+    # ./mako.nix
     ./niri.nix
     ./noctalia.nix
     ./spicetify.nix
     ./stylix.nix
     ./vicinae.nix
-    ./waybar
     ./zed.nix
-    ./zen.nix
+    # ./zen.nix
   ];
 }
