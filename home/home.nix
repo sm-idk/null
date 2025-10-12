@@ -17,6 +17,7 @@
   };
 
   programs.bash.enable = true;
+  programs.home-manager.enable = true;
 
   # The version should stay at the version you originally installed.
   home.stateVersion = "25.05";
