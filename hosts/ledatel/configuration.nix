@@ -1,6 +1,8 @@
 { inputs, pkgsUnstable, ... }:
 {
   imports = [
+    ../common/configuration.nix
+
     ./networking.nix
     ./hardware-acceleration.nix
     ./hardware-configuration.nix

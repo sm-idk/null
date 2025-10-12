@@ -1,8 +1,11 @@
 { inputs, pkgsUnstable, ... }:
 {
   imports = [
+    ../common/configuration.nix
+
     ./hardware.nix
     ./hardware-configuration.nix
+
     inputs.self.nixosModules
 
     inputs.chaotic.nixosModules.nyx-cache
