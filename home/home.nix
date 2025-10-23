@@ -13,6 +13,8 @@
       equibop
       rpcs3
       btop
+
+      gnome-frog
       ;
   };
 
