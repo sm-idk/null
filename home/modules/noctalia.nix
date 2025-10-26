@@ -48,7 +48,7 @@ in
       };
     };
     niri.settings.binds = with config.lib.niri.actions; {
-      "Mod+L".action.spawn = noctalia "lockScreen toggle";
+      "Mod+L".action.spawn = noctalia "lockScreen lock";
     };
   };
 }
