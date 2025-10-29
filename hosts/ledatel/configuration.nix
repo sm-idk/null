@@ -3,7 +3,6 @@
   imports = [
     ../common/configuration.nix
 
-    ./networking.nix
     ./hardware-acceleration.nix
     ./hardware-configuration.nix
 
@@ -28,38 +27,6 @@
 
   networking.hostName = "ledatel";
 
-  boot = {
-    supportedFilesystems = [ "ntfs" ];
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
-    # kernelPackages = pkgs.linuxPackages_latest;
-    # kernelPackages = pkgs.linuxPackages_cachyos-lts;
-    # kernelPackages = pkgs.linuxPackages_cachyos-gcc;
-    consoleLogLevel = 0;
-    initrd.verbose = false;
-  };
-
-  # Hardware
-  hardware = {
-    bluetooth.enable = true;
-  };
-  powerManagement.enable = true;
-
-  # User
-  users.mutableUsers = true;
-  users.users.bruno = {
-    isNormalUser = true;
-    initialPassword = "Ledatel1234";
-    password = "$y$j9T$WM/haleJarxktY.wzlQHJ/$mm2XunJfQL.ZlOQij6TzMcDDOmMCnIvBacJnnimySC/";
-    description = "Bruno";
-    extraGroups = [
-      "networkmanager"
-      "video"
-      "wheel"
-      "seat"
-    ];
-  };
-
   programs = {
     virt-manager.enable = true;
     nh.enable = true;
@@ -69,7 +36,6 @@
       dumpcap.enable = true;
     };
   };
-
   users.groups.libvirtd.members = [ "bruno" ];
   virtualisation.libvirtd.enable = true;
 
@@ -77,10 +43,6 @@
   services = {
     printing.enable = true;
     kismet.httpd.enable = true;
-    gnome.gnome-keyring.enable = true;
-    colord.enable = true;
-    displayManager.sddm.enable = true;
-    displayManager.sddm.wayland.enable = true;
     scx.enable = true;
   };
 
