@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  pkgsUnstable,
+  inputs,
+  ...
+}:
 {
   imports = [ inputs.self.homeModules ];
 
@@ -7,14 +12,19 @@
       onlyoffice-desktopeditors
       transmission_4-qt
       signal-desktop
-      equicord
       bottles
       ghostty
       equibop
       rpcs3
       btop
 
+      prismlauncher
+      yt-dlp
+      mpv
       gnome-frog
+      ;
+    inherit (pkgsUnstable)
+      equicord
       ;
   };
 
