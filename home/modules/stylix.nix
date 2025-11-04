@@ -9,11 +9,6 @@
 
   stylix = {
     enable = true;
-    image = pkgs.fetchurl {
-      url = "https://wallpaperswide.com/download/red_desert_night_moon-wallpaper-1920x1080.jpg";
-      hash = "sha256-kjeXb0ZLHjQefdqMy6+3YSQw94qypwgbuIwttrYoY/U=";
-    };
-
     polarity = "dark";
     # polarity = "light";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/vesper.yaml";
