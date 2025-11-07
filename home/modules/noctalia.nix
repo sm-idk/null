@@ -42,9 +42,12 @@ in
         location = {
           name = "Warsaw";
         };
-        colorSchemes = {
-          predefinedScheme = "Monochrome";
+        wallpaper = {
+          overviewEnabled = false;
+          directory = "/home/bruno/Pictures/Wallpapers";
         };
+        dock.enabled = false;
+        overviewEnabled = true;
       };
     };
     niri.settings.binds = with config.lib.niri.actions; {

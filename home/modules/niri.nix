@@ -74,7 +74,7 @@
 
       layer-rules = [
         {
-          matches = [ { namespace = "^hyprpaper$"; } ];
+          matches = [ { namespace = "^noctalia-wallpaper*"; } ];
           place-within-backdrop = true;
         }
       ];
@@ -158,7 +158,9 @@
       "Super+Down".action = focus-workspace-down;
       "Super+Up".action = focus-workspace-up;
 
-      "Print".action = screenshot;
+      # "Print".action = screenshot;
+      "Print".action.screenshot = [ ];
+      "Mod+Print".action.screenshot-window = [ ];
 
       XF86AudioRaiseVolume = {
         action = spawn [
