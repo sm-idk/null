@@ -43,10 +43,14 @@ in
           name = "Warsaw";
         };
         wallpaper = {
+          randomEnabled = false;
           overviewEnabled = false;
           directory = "/home/bruno/Pictures/Wallpapers";
         };
-        colorSchemes.generateTemplatesForPredefined = false;
+        colorSchemes = {
+          predefinedScheme = "Rosepine";
+          generateTemplatesForPredefined = false;
+        };
         dock.enabled = false;
         overviewEnabled = true;
       };
