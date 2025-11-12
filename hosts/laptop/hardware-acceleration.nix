@@ -1,0 +1,53 @@
+# Hardware acceleration configuration for laptop
+# This file configures GPU drivers and hardware acceleration
+{
+  pkgs,
+  ...
+}:
+
+{
+  # Basic hardware acceleration (works with most GPUs)
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      # Intel
+      intel-media-driver
+      vaapiIntel
+      vaapiVdpau
+      libvdpau-va-gl
+
+      # Common packages
+      libva
+      libva-utils
+
+      # Vulkan support (for gaming/graphics applications):
+      vulkan-loader
+      vulkan-validation-layers
+      vulkan-extension-layer
+    ];
+  };
+
+  # Enable 32-bit support if needed (gaming, some applications)
+  # hardware.graphics.enable32Bit = true;
+
+  # Example configurations (uncomment and modify as needed):
+
+  # If you have Intel integrated graphics:
+  # boot.kernelModules = [ "i915" ];
+  environment.variables = {
+    VDPAU_DRIVER = "va_gl";
+  };
+
+  # If you have hybrid graphics (Intel + NVIDIA), you might want:
+  # hardware.graphics.extraPackages32 = with pkgs.driversi686Linux; [
+  #   intel-media-driver
+  #   vaapiIntel
+  # ];
+
+  # Vulkan support (for gaming/graphics applications):
+  # hardware.graphics.extraPackages = with pkgs; [
+  #   vulkan-loader
+  #   vulkan-validation-layers
+  #   vulkan-extension-layer
+  # ];
+}
