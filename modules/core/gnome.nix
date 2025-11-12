@@ -49,7 +49,7 @@
         gnome-console
         gnome-contacts
         gnome-font-viewer
-        gnome-logs
+        # gnome-logs
         gnome-maps
         gnome-music
         gnome-system-monitor
@@ -57,6 +57,7 @@
         loupe
         simple-scan
         snapshot
+        geary
         totem
         yelp
         ;
