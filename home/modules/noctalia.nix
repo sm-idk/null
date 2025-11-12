@@ -46,6 +46,7 @@ in
           overviewEnabled = false;
           directory = "/home/bruno/Pictures/Wallpapers";
         };
+        colorSchemes.generateTemplatesForPredefined = false;
         dock.enabled = false;
         overviewEnabled = true;
       };
