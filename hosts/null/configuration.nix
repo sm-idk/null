@@ -3,7 +3,7 @@
   imports = [
     ../common/configuration.nix
 
-    ./hardware.nix
+    ./nvidia.nix
     ./hardware-configuration.nix
 
     inputs.self.nixosModules
