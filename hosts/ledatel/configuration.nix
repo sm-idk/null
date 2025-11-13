@@ -29,6 +29,11 @@
 
   networking.hostName = "ledatel";
 
+  environment.systemPackages = [
+    pkgsUnstable.netdiscover
+    pkgsUnstable.steam-run
+  ];
+
   programs = {
     virt-manager.enable = true;
     nh.enable = true;
