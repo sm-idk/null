@@ -18,11 +18,14 @@
       inherit (pkgs) gnome-settings-daemon;
       inherit (pkgs.gnome2) GConf;
     };
+
     xserver = {
       enable = true;
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
     };
+
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+
     gvfs.enable = true;
   };
 
