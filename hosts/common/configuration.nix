@@ -22,6 +22,8 @@
 
   services.scx.enable = true;
 
+  home-manager.backupFileExtension = "bak";
+
   # Hardware
   hardware = {
     bluetooth.enable = true;
