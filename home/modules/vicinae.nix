@@ -4,7 +4,7 @@
 
   services.vicinae = {
     enable = true;
-    autoStart = true;
+    systemd.autoStart = true;
 
     settings = {
       faviconService = "twenty";
