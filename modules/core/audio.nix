@@ -11,4 +11,6 @@ _: {
   # Audio-related security settings
   security.rtkit.enable = true;
   security.polkit.enable = true;
+
+  services.pulseaudio.enable = false; # Use Pipewire, the modern sound subsystem
 }
