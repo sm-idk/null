@@ -4,21 +4,16 @@
   inputs = {
     # First‑party (official)
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
 
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # Home‑manager
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # Second‑party (unofficial)
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager";
+      # inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     # Third‑party custom flakes
