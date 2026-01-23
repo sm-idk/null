@@ -1,0 +1,19 @@
+[[extensions]]
+id = "epcnnfbjfcgphgdmggkamkmgojdagdnn"
+name = "uBlock Origin"
+source = "chrome-store"
+
+[[extensions]]
+id = "oboonakemofpalcgghocfoadofidjkkk"
+name = "KeePassXC-Browser"
+source = "chrome-store"
+
+[[extensions]]
+id = "mnjggcdmjocbbbhaepdhchncahnbgone"
+name = "SponsorBlock for YouTube"
+source = "chrome-store"
+
+[[extensions]]
+id = "hlepfoohegkhhmjieoechaddaejaokhf"
+name = "Refined GitHub"
+source = "chrome-store"
