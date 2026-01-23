@@ -13,7 +13,9 @@
     # polarity = "light";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/vesper.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/borland.yaml";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/black-metal.yaml";
 
     cursor = {
       name = "Bibata-Modern-Ice";

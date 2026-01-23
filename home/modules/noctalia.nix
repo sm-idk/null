@@ -49,7 +49,9 @@ in
           directory = "/home/bruno/Pictures/Wallpapers";
         };
         colorSchemes = {
-          predefinedScheme = "Rosepine";
+          # predefinedScheme = "Rosepine";
+          # predefinedScheme = "Ayu";
+          predefinedScheme = "Rosey AMOLED";
           generateTemplatesForPredefined = false;
         };
         dock.enabled = false;
