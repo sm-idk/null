@@ -18,7 +18,10 @@ in
 {
   imports = [ inputs.noctalia.homeModules.default ];
 
-  home.packages = [ inputs.noctalia.packages.${pkgsUnstable.system}.default ];
+  home.packages = [
+    inputs.noctalia.packages.${pkgs.system}.default
+    inputs.quickshell.packages.${pkgs.system}.default
+  ];
   programs = {
     noctalia-shell = {
       enable = true;
