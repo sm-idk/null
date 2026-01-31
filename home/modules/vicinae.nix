@@ -1,10 +1,11 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [ inputs.vicinae.homeManagerModules.default ];
 
   services.vicinae = {
     enable = true;
     systemd.autoStart = true;
+    package = pkgs.vicinae;
 
     settings = {
       faviconService = "twenty";
