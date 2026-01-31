@@ -15,7 +15,6 @@
       bottles
       ghostty
       equibop
-      rpcs3
       btop
 
       prismlauncher
@@ -24,6 +23,7 @@
       gnome-frog
       ;
     inherit (pkgsUnstable)
+      rpcs3
       equicord
       ;
   };
