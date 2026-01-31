@@ -8,23 +8,24 @@
   imports = [ inputs.self.homeModules ];
 
   home.packages = builtins.attrValues {
+
     inherit (pkgs)
+      btop
+      ghostty
+      ;
+
+    inherit (pkgsUnstable)
       onlyoffice-desktopeditors
       transmission_4-qt
       signal-desktop
       bottles
-      ghostty
       equibop
-      btop
-
       prismlauncher
       yt-dlp
       mpv
       gnome-frog
-      ;
-    inherit (pkgsUnstable)
-      rpcs3
       equicord
+      rpcs3
       ;
   };
 
