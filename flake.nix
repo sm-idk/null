@@ -45,10 +45,6 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    vicinae = {
-      url = "github:vicinaehq/vicinae";
-    };
-
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
