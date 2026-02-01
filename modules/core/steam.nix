@@ -74,14 +74,14 @@
         #     ;
         # };
       };
-      # gamemode = {
-      #   enable = true;
-      #   enableRenice = true;
-      #   settings.custom.start = "${lib.getExe pkgsUnstable.libnotify} 'GameMode started'";
-      #   settings.custom.end = "${lib.getExe pkgsUnstable.libnotify} 'GameMode ended'";
-      # };
-      # gamescope.enable = true;
-      # gamescope.capSysNice = true;
+      gamemode = {
+        enable = true;
+        enableRenice = true;
+        settings.custom.start = "${lib.getExe pkgsUnstable.libnotify} 'GameMode started'";
+        settings.custom.end = "${lib.getExe pkgsUnstable.libnotify} 'GameMode ended'";
+      };
+      gamescope.enable = true;
+      gamescope.capSysNice = true;
     };
   };
 }
