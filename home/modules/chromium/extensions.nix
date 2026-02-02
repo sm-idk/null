@@ -43,12 +43,12 @@ lib.flatten [
     version = "26.1.24";
   }
   {
-    id = "kpaaapnegfaaoimjpagopchdbmenfngl";
+    id = "gkkkcomfmldkigajkmljnbpiajbpbgdg";
     crxPath = pkgs.fetchurl {
-      url = "https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v10.1.1.0/TWP_10.1.1.0_Chromium.crx";
-      name = "kpaaapnegfaaoimjpagopchdbmenfngl.crx";
-      hash = "sha256-X4m1To1n/1zQGrzQPXPyR8KIA4JleyyAh5AjuS2BvYw=";
+      url = "https://clients2.googleusercontent.com/crx/blobs/AV8Xwo71ShOQ9YkoIJ9dZVXVhp6PeUz0E5ohdAetY2cec46ORERG4ctXEHkPtENICDNZy0z-EKK5okA8ov4AbR2ST_Ho-2mBlW-iKNBoiWJWoFaf_2yoipfzuDgwHNClDjgAxlKa5TKe2beoho0K2CfNA43VoQMOC7-S/GKKKCOMFMLDKIGAJKMLJNBPIAJBPBGDG_10_1_5_1.crx";
+      name = "gkkkcomfmldkigajkmljnbpiajbpbgdg.crx";
+      hash = "sha256-Patr9DmEymUGQLW+LrlM7akodgeW+GHp4uOb0Y5sSMM=";
     };
-    version = "10.1.1.0";
+    version = "10.1.5.1";
   }
 ]
