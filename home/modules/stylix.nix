@@ -15,6 +15,7 @@
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/borland.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/default-dark.yaml";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/black-metal.yaml";
 
     cursor = {
@@ -42,12 +43,13 @@
 
     overlays.enable = false;
 
-    targets = {
-      gtk.extraCss = ''
-        @define-color sidebar_bg_color #${config.lib.stylix.colors.base00};
-        @define-color headerbar_bg_color #${config.lib.stylix.colors.base00};
-      '';
-      # zed.enable = false;
-    };
+    # targets = {
+    #   gtk.extraCss = ''
+    #     @define-color sidebar_bg_color #${config.lib.stylix.colors.base00};
+    #     @define-color headerbar_bg_color #${config.lib.stylix.colors.base00};
+    #   '';
+    # zed.enable = false;
+    # nixcord.enable = false;
+    # };
   };
 }
