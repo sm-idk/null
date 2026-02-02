@@ -19,12 +19,10 @@
       transmission_4-qt
       signal-desktop
       bottles
-      equibop
       prismlauncher
       yt-dlp
       mpv
       gnome-frog
-      equicord
       rpcs3
       ;
   };
