@@ -6,8 +6,6 @@
     ./nvidia.nix
     ./hardware-configuration.nix
 
-    inputs.self.nixosModules
-
     inputs.home-manager.nixosModules.home-manager
     inputs.niri.nixosModules.niri
     inputs.nix-flatpak.nixosModules.nix-flatpak
