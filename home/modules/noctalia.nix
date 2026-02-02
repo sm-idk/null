@@ -18,8 +18,8 @@ in
   imports = [ inputs.noctalia.homeModules.default ];
 
   home.packages = [
-    inputs.noctalia.packages.${pkgs.system}.default
-    inputs.quickshell.packages.${pkgs.system}.default
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
   programs = {
     noctalia-shell = {
