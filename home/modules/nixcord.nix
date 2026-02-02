@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgsUnstable, ... }:
 {
   imports = [ inputs.nixcord.homeModules.nixcord ];
 
@@ -6,8 +6,10 @@
     enable = true;
 
     discord.equicord.enable = true;
+    discord.vencord.enable = false;
 
     equibop.enable = true;
+    equibop.package = pkgsUnstable.equibop;
 
     config = {
       frameless = false;
