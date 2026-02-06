@@ -6,7 +6,7 @@
   ];
 
   boot = {
-    binfmt.emulatedSystems = [ "aarch64-linux" ];
+    binfmt.emulatedSystems = [ "x86_64-windows" ];
     supportedFilesystems = [ "ntfs" ];
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
