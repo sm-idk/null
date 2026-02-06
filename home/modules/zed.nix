@@ -10,7 +10,6 @@
       ;
   };
   programs.zed-editor.enable = true;
-  # programs.zed-editor.package = pkgs.zed-editor;
   programs.zed-editor.package = pkgsUnstable.zed-editor;
   programs.zed-editor.extensions = [
     "nix"
@@ -39,6 +38,7 @@
     ];
     icon_theme = "Material Icon Theme";
 
+    autosave = "on_focus_change";
     disable_ai = true;
 
     restore_on_startup = "none";
