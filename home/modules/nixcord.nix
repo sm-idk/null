@@ -92,13 +92,13 @@
         newPluginsManager.enable = true;
         noModalAnimation.enable = true;
         noNitroUpsell.enable = true;
-        polishWording = {
-          enable = true;
-          fixApostrophes = true;
-          fixCapitalization = true;
-          fixPunctuation = true;
-          fixPunctuationFrequency = 100.0;
-        };
+        # polishWording = {
+        #   enable = true;
+        #   fixApostrophes = true;
+        #   fixCapitalization = true;
+        #   fixPunctuation = true;
+        #   fixPunctuationFrequency = 100.0;
+        # };
         favoriteGifSearch = {
           enable = true;
           searchOption = "hostandpath";
