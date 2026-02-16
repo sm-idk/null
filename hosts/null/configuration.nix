@@ -1,7 +1,7 @@
 { inputs, pkgsUnstable, ... }:
 {
   imports = [
-    ../common/configuration.nix
+    ../common
 
     ./nvidia.nix
     ./hardware-configuration.nix

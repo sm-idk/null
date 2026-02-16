@@ -2,7 +2,7 @@
 {
   imports = [
     ./networking.nix
-    inputs.self.nixosModules
+    inputs.self.nixosModules.default
   ];
 
   boot = {

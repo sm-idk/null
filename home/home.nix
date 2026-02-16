@@ -5,7 +5,7 @@
   ...
 }:
 {
-  imports = [ inputs.self.homeModules ];
+  imports = [ inputs.self.homeModules.default ];
 
   home.packages = builtins.attrValues {
 

@@ -48,8 +48,8 @@
   };
 
   outputs = inputs: {
-    nixosModules = import ./modules/core;
-    homeModules = import ./home/modules;
+    nixosModules.default = import ./modules/core;
+    homeModules.default = import ./home/modules;
     nixosConfigurations = import ./hosts { inherit inputs; };
   };
 }
