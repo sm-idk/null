@@ -24,7 +24,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch
+    # nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch
 
     quickshell = {
       url = "github:outfoxxed/quickshell";
