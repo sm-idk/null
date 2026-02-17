@@ -19,7 +19,7 @@ in
 
   home.packages = [
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-    inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
+    # inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
   programs = {
     noctalia-shell = {
