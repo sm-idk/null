@@ -16,5 +16,6 @@
       ShowTrayIcon = true;
       TrayIconAppearance = "monochrome-light";
     };
+    SecretServiceIntegration.Enabled = true;
   };
 }
