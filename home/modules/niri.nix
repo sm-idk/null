@@ -19,6 +19,7 @@
   };
 
   programs.niri = {
+    package = pkgs.niri;
     settings = {
       prefer-no-csd = true;
       overview.workspace-shadow.enable = false;
