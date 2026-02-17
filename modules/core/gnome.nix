@@ -1,10 +1,11 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   services = {
     gnome = {
       glib-networking.enable = true;
       gnome-browser-connector.enable = true;
-      gnome-keyring.enable = true;
+      # Disable gnome-keyring to use KeePassXC as unified secret service
+      gnome-keyring.enable = lib.mkForce false;
       gnome-online-accounts.enable = true;
       gnome-remote-desktop.enable = true;
       gnome-settings-daemon.enable = true;
