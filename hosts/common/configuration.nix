@@ -48,4 +48,7 @@
 
   programs.nh.enable = true;
   programs.niri.enable = true;
+
+  # Enable nix-ld for LSP servers downloaded by Zed
+  programs.nix-ld.enable = true;
 }
