@@ -17,6 +17,7 @@
     initrd.verbose = false;
   };
 
+  # services.displayManager.ly.enable = true;
   services.displayManager.gdm.enable = true;
   # services.desktopManager.gnome.enable = true;
   # services.desktopManager.cosmic.enable = true;
@@ -45,10 +46,4 @@
       "seat"
     ];
   };
-
-  programs.nh.enable = true;
-  programs.niri.enable = true;
-
-  # Enable nix-ld for LSP servers downloaded by Zed
-  programs.nix-ld.enable = true;
 }

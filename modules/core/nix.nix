@@ -34,4 +34,6 @@
 
   # Disable built-in NixOS documentation
   documentation.nixos.enable = false;
+
+  programs.nh.enable = true;
 }
