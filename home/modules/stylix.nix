@@ -43,13 +43,13 @@
 
     overlays.enable = false;
 
-    # targets = {
-    #   gtk.extraCss = ''
-    #     @define-color sidebar_bg_color #${config.lib.stylix.colors.base00};
-    #     @define-color headerbar_bg_color #${config.lib.stylix.colors.base00};
-    #   '';
-    # zed.enable = false;
-    # nixcord.enable = false;
-    # };
+    targets = {
+      #   gtk.extraCss = ''
+      #     @define-color sidebar_bg_color #${config.lib.stylix.colors.base00};
+      #     @define-color headerbar_bg_color #${config.lib.stylix.colors.base00};
+      #   '';
+      zed.enable = false;
+      nixcord.enable = false;
+    };
   };
 }
