@@ -2,6 +2,7 @@
   imports = [
     ./chromium
     ./git.nix
+    ./hack.nix
     ./keepassxc.nix
     ./niri.nix
     ./nixcord.nix
