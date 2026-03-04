@@ -10,9 +10,6 @@
       ;
   };
 
-  # Enable nix-ld for LSP servers downloaded by Zed
-  programs.nix-ld.enable = true;
-
   programs.zed-editor = {
     enable = true;
     package = pkgsUnstable.zed-editor;
