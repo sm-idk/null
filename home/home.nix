@@ -25,6 +25,8 @@
       gnome-frog
       rpcs3
       ;
+
+    helium = inputs.euvlok-pkgs.legacyPackages.${pkgs.system}.helium-browser;
   };
 
   programs.bash.enable = true;

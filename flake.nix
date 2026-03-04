@@ -45,6 +45,8 @@
       url = "github:FlameFlag/nixcord";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    euvlok-pkgs.url = "github:euvlok/pkgs";
   };
 
   outputs = inputs: {
