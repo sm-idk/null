@@ -22,3 +22,8 @@ source = "chrome-store"
 id = "gkkkcomfmldkigajkmljnbpiajbpbgdg"
 name = "TWP - Translate Web Pages"
 source = "chrome-store"
+
+[[extensions]]
+id = "fihnjjcciajhdojfnbdddfaoknhalnja"
+name = "I don't care about cookies"
+source = "chrome-store"
