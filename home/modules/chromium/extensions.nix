@@ -9,11 +9,11 @@ lib.flatten [
   {
     id = "ddkjiahejlhfcafbddmgiahcphecmpfh";
     crxPath = pkgs.fetchurl {
-      url = "https://clients2.googleusercontent.com/crx/blobs/Aa54OTB_3UCOWnh3XYE_WZCSh-VBaOy2NGhmBemiiLCwRjg07KEvjZRH5ctU5U46uhZGfK2xk2LX2dGu8J1TfAhG7ERIUm2TVlXFdPdVJkCAtAQ9Y8ieuRkbaDDbYmMiH53MAMZSmuXy1fhDIyfien454LvsHBzdDhcQ9A/DDKJIAHEJLHFCAFBDDMGIAHCPHECMPFH_2026_301_2014_0.crx";
+      url = "https://clients2.googleusercontent.com/crx/blobs/Aa54OTBpWzzOrr_6ZecwFIF_c07wmy3e8LlDjxS7cX9_-d_d2owOHpv5-Z1-D5GZKbJk-_DMv4Cp0uRnwD1NIYDP5p_x4EL3yNXHQBfq1nk5DBPsGuCHa45N8LWxmY41R2ceAMZSmuVHvLnh2z4IH2tOLWSU9ovG6hBqnA/DDKJIAHEJLHFCAFBDDMGIAHCPHECMPFH_2026_308_1810_0.crx";
       name = "ddkjiahejlhfcafbddmgiahcphecmpfh.crx";
-      hash = "sha256-Eov/dQoZTRK6SljyBo/j698AQLpI/yn+W4Fp35k+7SE=";
+      hash = "sha256-8j0M4xUSmNLU4JuwHVWQWOMRHB8fN3e/mA3+E2oHPf4=";
     };
-    version = "2026.301.2014";
+    version = "2026.308.1810";
   }
   {
     id = "oboonakemofpalcgghocfoadofidjkkk";
@@ -52,12 +52,12 @@ lib.flatten [
     version = "10.1.5.1";
   }
   {
-    id = "fihnjjcciajhdojfnbdddfaoknhalnja";
+    id = "edibdbjcniadpccecjdfdjjppcpchdlm";
     crxPath = pkgs.fetchurl {
-      url = "https://clients2.googleusercontent.com/crx/blobs/Aa54OTBq7PpbRgX2kH9rhnuOfnaBolCffWyopBD_Dd3oD8sFs8i7ce7Yr19QyCw0QoXzv_g5L1SmiWueFuhjhhLulHCviCRqUHm4yuvcoBP7oPYOXK_EU3AZ7-kjP1yyAn0AxlKa5Tj53vObCmHpfltHPYRodmfkdw4d/FIHNJJCCIAJHDOJFNBDDDFAOKNHALNJA_3_5_1_0.crx";
-      name = "fihnjjcciajhdojfnbdddfaoknhalnja.crx";
-      hash = "sha256-cqmguZ8yVbnmN+y1pEic2CM+kaBP4TFReh7ERQYbUIk=";
+      url = "https://clients2.googleusercontent.com/crx/blobs/Aa54OTBuSKPIcjVvq_VryELhc_PJ4AhL2mPlCk1sMbK3W25jGjCHftct2nHBDKTjzbszqik0wGK2RKH2yJM-37ce6kPfkAudTtz5bIZiTAo1GQWQmJuUE_vypxPv-44AiXUAxlKa5SsFOngSEo-3-gINrwqUTrzsojwy/EDIBDBJCNIADPCCECJDFDJJPPCPCHDLM_1_1_9_0.crx";
+      name = "edibdbjcniadpccecjdfdjjppcpchdlm.crx";
+      hash = "sha256-RrbNwwND3Sl8bTTZF5xeHMHuQEyOY7FU3vFY4TAQw30=";
     };
-    version = "3.5.1";
+    version = "1.1.9";
   }
 ]
