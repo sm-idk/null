@@ -31,17 +31,8 @@
 
   networking.hostName = "zero";
 
-  # Disable networkmanager (incompatible with iwd on Apple Silicon)
-  networking.networkmanager.enable = lib.mkForce false;
-
   # Apple Silicon specific configuration
   boot.loader.efi.canTouchEfiVariables = false;
-
-  # iwd is recommended for WiFi on Apple Silicon Macs
-  networking.wireless.iwd = {
-    enable = true;
-    settings.General.EnableNetworkConfiguration = true;
-  };
 
   # Specify path to peripheral firmware files for declarative management
   hardware.asahi.peripheralFirmwareDirectory = ./firmware;
