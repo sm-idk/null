@@ -3,9 +3,9 @@
   imports = [ inputs.nixcord.homeModules.nixcord ];
 
   programs.nixcord = {
-    enable = true;
+    enable = pkgsUnstable.system == "x86_64-linux";
 
-    discord.equicord.enable = true;
+    discord.equicord.enable = pkgsUnstable.system == "x86_64-linux";
     discord.vencord.enable = false;
 
     equibop.enable = true;

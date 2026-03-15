@@ -47,6 +47,10 @@
     };
 
     euvlok-pkgs.url = "github:euvlok/pkgs";
+
+    apple-silicon = {
+      url = "github:nix-community/nixos-apple-silicon";
+    };
   };
 
   outputs = inputs: {

@@ -12,6 +12,11 @@
     inputs.stylix.nixosModules.stylix
   ];
 
+  boot.binfmt.emulatedSystems = [
+    "aarch64-linux"
+    "x86_64-windows"
+  ];
+
   nixos.steam.enable = true;
 
   home-manager = {

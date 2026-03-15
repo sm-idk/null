@@ -6,7 +6,6 @@
   ];
 
   boot = {
-    binfmt.emulatedSystems = [ "x86_64-windows" ];
     supportedFilesystems = [ "ntfs" ];
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
@@ -23,7 +22,7 @@
   # services.desktopManager.cosmic.enable = true;
   # services.desktopManager.cosmic.xwayland.enable = true;
 
-  services.scx.enable = true;
+  # services.scx.enable = true;
 
   home-manager.backupFileExtension = "bak";
 
