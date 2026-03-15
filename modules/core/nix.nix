@@ -1,10 +1,19 @@
-{ inputs, config, ... }:
+{ inputs, ... }:
 {
-  # Set `pkgsUnstable` arg
-  _module.args.pkgsUnstable = import inputs.nixpkgs-unstable {
-    inherit (config.nixpkgs.hostPlatform) system;
-    inherit (config.nixpkgs) config;
-  };
+  # Set `pkgs.unstable` arg
+  # _module.args.pkgs.unstable = import inputs.nixpkgs-unstable {
+  #   inherit (config.nixpkgs.hostPlatform) system;
+  #   inherit (config.nixpkgs) config;
+  # };
+
+  nixpkgs.overlays = [
+    (final: prev: {
+      unstable = import inputs.nixpkgs-unstable {
+        inherit (prev.stdenvNoCC.hostPlatform) system;
+        inherit (prev) config;
+      };
+    })
+  ];
 
   # Nix settings
   nix = {

@@ -1,4 +1,4 @@
-{ inputs, pkgsUnstable, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [
     ../common
@@ -18,14 +18,14 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.bruno = ../../home/home.nix;
-    extraSpecialArgs = { inherit inputs pkgsUnstable; };
+    extraSpecialArgs = { inherit inputs; };
   };
 
   networking.hostName = "ledatel";
 
   environment.systemPackages = [
-    pkgsUnstable.netdiscover
-    pkgsUnstable.steam-run
+    pkgs.unstable.netdiscover
+    pkgs.unstable.steam-run
   ];
 
   programs = {

@@ -1,5 +1,5 @@
 {
-  pkgsUnstable,
+  pkgs,
   lib,
   config,
   ...
@@ -29,14 +29,14 @@
     #             wqy_zenhei
     #             yad
     #             ;
-    #           inherit (pkgsUnstable)
+    #           inherit (pkgs.unstable)
     #             libgdiplus
     #             libkrb5
     #             libpng
     #             libpulseaudio
     #             libvorbis
     #             ;
-    #           inherit (pkgsUnstable)
+    #           inherit (pkgs.unstable)
     #             vulkan-caps-viewer
     #             vulkan-extension-layer
     #             vulkan-headers
@@ -68,7 +68,7 @@
         # don't forget to periodically change steam's compatibility layer
         #
         # extraCompatPackages = builtins.attrValues {
-        #   inherit (pkgsUnstable)
+        #   inherit (pkgs.unstable)
         #     # proton-ge-bin
         #     steamtinkerlaunch
         #     ;
@@ -77,8 +77,8 @@
       gamemode = {
         enable = true;
         enableRenice = true;
-        settings.custom.start = "${lib.getExe pkgsUnstable.libnotify} 'GameMode started'";
-        settings.custom.end = "${lib.getExe pkgsUnstable.libnotify} 'GameMode ended'";
+        settings.custom.start = "${lib.getExe pkgs.unstable.libnotify} 'GameMode started'";
+        settings.custom.end = "${lib.getExe pkgs.unstable.libnotify} 'GameMode ended'";
       };
       gamescope.enable = true;
       gamescope.capSysNice = true;

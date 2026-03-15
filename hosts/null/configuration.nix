@@ -1,4 +1,4 @@
-{ inputs, pkgsUnstable, ... }:
+{ inputs, ... }:
 {
   imports = [
     ../common
@@ -23,7 +23,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.bruno = ../../home/home.nix;
-    extraSpecialArgs = { inherit inputs pkgsUnstable; };
+    extraSpecialArgs = { inherit inputs; };
   };
 
   networking.hostName = "null";

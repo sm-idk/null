@@ -1,11 +1,11 @@
 {
-  pkgsUnstable,
+  pkgs,
   ...
 }:
 {
   # programs.ghidra.enable = true;
   home.packages = builtins.attrValues {
-    inherit (pkgsUnstable)
+    inherit (pkgs.unstable)
       autopsy
       nuclei
       cent

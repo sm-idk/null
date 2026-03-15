@@ -1,6 +1,5 @@
 {
   pkgs,
-  pkgsUnstable,
   inputs,
   ...
 }:
@@ -14,7 +13,7 @@
       ghostty
       ;
 
-    inherit (pkgsUnstable)
+    inherit (pkgs.unstable)
       onlyoffice-desktopeditors
       transmission_4-qt
       signal-desktop

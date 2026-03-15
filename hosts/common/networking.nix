@@ -1,12 +1,12 @@
 {
-  pkgsUnstable,
+  pkgs,
   ...
 }:
 {
   services.tailscale = {
     enable = true;
     openFirewall = true;
-    package = pkgsUnstable.tailscale;
+    package = pkgs.unstable.tailscale;
   };
 
   programs.mtr.enable = true;

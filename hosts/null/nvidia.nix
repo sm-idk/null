@@ -1,8 +1,7 @@
 {
   config,
-  pkgs,
   lib,
-  pkgsUnstable,
+  pkgs,
   ...
 }:
 {
@@ -29,7 +28,7 @@
         {
             "file_format_version" : "1.0.0",
             "ICD" : {
-                "library_path" : "${pkgsUnstable.egl-wayland}/lib/libnvidia-egl-wayland.so"
+                "library_path" : "${pkgs.unstable.egl-wayland}/lib/libnvidia-egl-wayland.so"
             }
         }
       '';

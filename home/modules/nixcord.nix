@@ -1,15 +1,15 @@
-{ inputs, pkgsUnstable, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [ inputs.nixcord.homeModules.nixcord ];
 
   programs.nixcord = {
-    enable = pkgsUnstable.system == "x86_64-linux";
+    enable = pkgs.unstable.system == "x86_64-linux";
 
-    discord.equicord.enable = pkgsUnstable.system == "x86_64-linux";
+    discord.equicord.enable = pkgs.unstable.system == "x86_64-linux";
     discord.vencord.enable = false;
 
     equibop.enable = true;
-    equibop.package = pkgsUnstable.equibop;
+    equibop.package = pkgs.unstable.equibop;
 
     config = {
       frameless = false;

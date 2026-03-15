@@ -1,4 +1,4 @@
-{ pkgs, pkgsUnstable, ... }:
+{ pkgs, ... }:
 {
   home.packages = builtins.attrValues {
     inherit (pkgs)
@@ -12,7 +12,7 @@
 
   programs.zed-editor = {
     enable = true;
-    package = pkgsUnstable.zed-editor;
+    package = pkgs.unstable.zed-editor;
     extensions = [
       "nix"
       "xml"

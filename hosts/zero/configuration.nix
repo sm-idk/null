@@ -1,9 +1,4 @@
-{
-  inputs,
-  pkgsUnstable,
-  lib,
-  ...
-}:
+{ inputs, lib, ... }:
 {
   imports = [
     ../common
@@ -20,13 +15,13 @@
     "x86_64-linux"
   ];
 
-  # nixos.steam.enable = true;
+  nixos.steam.enable = true;
 
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
     users.bruno = ../../home/home.nix;
-    extraSpecialArgs = { inherit inputs pkgsUnstable; };
+    extraSpecialArgs = { inherit inputs; };
   };
 
   networking.hostName = "zero";
@@ -46,6 +41,8 @@
       dumpcap.enable = true;
     };
   };
+
+  services.power-profiles-daemon.enable = false;
 
   services.tlp.enable = true;
   services.tlp.settings = {
