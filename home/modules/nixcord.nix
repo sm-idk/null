@@ -5,12 +5,12 @@
   programs.nixcord = {
     enable = true;
 
-    vesktop.enable = false;
-    discord.equicord.enable = true;
-    discord.vencord.enable = false;
-
+    # Use Equibop (native ARM64 Discord client)
     equibop.enable = true;
     equibop.package = pkgs.unstable.equibop;
+
+    # Disable official Discord (not available on aarch64)
+    discord.enable = false;
 
     config = {
       frameless = false;
@@ -143,6 +143,23 @@
       #   equicordToolbox.enable = true;
       #   gifRoulette.enable = true;
       # };
+      # };
     };
+  };
+
+  # Ensure desktop entries are available
+  xdg.dataFile = {
+    "applications/equibop.desktop".text = ''
+      [Desktop Entry]
+      Categories=Network;InstantMessaging;Chat
+      Exec=equibop %U
+      GenericName=Internet Messenger
+      Icon=equibop
+      Keywords=discord;equibop;electron;chat
+      Name=Equibop
+      StartupWMClass=Equibop
+      Type=Application
+      Version=1.5
+    '';
   };
 }
