@@ -62,6 +62,14 @@ in
     };
     niri.settings.binds = with config.lib.niri.actions; {
       "Mod+L".action.spawn = noctalia "lockScreen lock";
+      XF86MonBrightnessUp = {
+        action.spawn = noctalia "brightness increase";
+        allow-when-locked = true;
+      };
+      XF86MonBrightnessDown = {
+        action.spawn = noctalia "brightness decrease";
+        allow-when-locked = true;
+      };
     };
   };
 }

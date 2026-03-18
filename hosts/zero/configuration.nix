@@ -28,6 +28,7 @@
 
   # Apple Silicon specific configuration
   boot.loader.efi.canTouchEfiVariables = false;
+  boot.kernelParams = [ "appledrm.show_notch=1" ];
 
   # Specify path to peripheral firmware files for declarative management
   hardware.asahi.peripheralFirmwareDirectory = ./firmware;
