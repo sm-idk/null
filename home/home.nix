@@ -11,6 +11,7 @@
     inherit (pkgs)
       btop
       ghostty
+      file
       ;
 
     inherit (pkgs.unstable)
