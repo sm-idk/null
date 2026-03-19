@@ -1,4 +1,9 @@
-{ inputs, lib, ... }:
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ../common
@@ -11,11 +16,11 @@
     inputs.apple-silicon.nixosModules.apple-silicon-support
   ];
 
-  boot.binfmt.emulatedSystems = [
-    "x86_64-linux"
-  ];
+  # boot.binfmt.emulatedSystems = [
+  #   "x86_64-linux"
+  # ];
 
-  nixos.steam.enable = true;
+  # nixos.steam.enable = true;
 
   home-manager = {
     useGlobalPkgs = true;
@@ -33,8 +38,23 @@
   # Specify path to peripheral firmware files for declarative management
   hardware.asahi.peripheralFirmwareDirectory = ./firmware;
 
-  # Allow building aarch64 packages on x86_64
+  # Allow building aarch64 packCurrent RootFS path set to '/run/fex-emu/rootfs'
   nixpkgs.config.allowUnsupportedSystem = true;
+
+  # nixos-muvm-fex packages for x86 emulation
+  environment.systemPackages = with pkgs; [
+    muvm
+    fex
+    fex-x86-rootfs
+
+    asahi-audio
+    asahi-bless
+    asahi-fwextract
+    squashfuse
+    squashfsTools
+    erofs-utils
+    m1n1
+  ];
 
   programs = {
     wireshark = {

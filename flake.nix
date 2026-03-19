@@ -51,6 +51,15 @@
     apple-silicon = {
       url = "github:nix-community/nixos-apple-silicon";
     };
+
+    # nixos-muvm-fex = {
+    #   url = "github:imnotpoz/nixos-muvm-fex/native-build";
+    # };
+
+    nixos-muvm-fex = {
+      url = "path:/home/bruno/git/nixos-muvm-fex";
+      inputs.nixos-apple-silicon.follows = "apple-silicon";
+    };
   };
 
   outputs = inputs: {
