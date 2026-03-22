@@ -24,6 +24,8 @@
       mpv
       gnome-frog
       rpcs3
+
+      octaveFull
       ;
 
     helium = inputs.euvlok-pkgs.legacyPackages.${pkgs.system}.helium-browser;
