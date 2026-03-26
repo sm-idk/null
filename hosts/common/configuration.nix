@@ -27,9 +27,7 @@
   home-manager.backupFileExtension = "bak";
 
   # Hardware
-  hardware = {
-    bluetooth.enable = true;
-  };
+  hardware.bluetooth.enable = true;
   powerManagement.enable = true;
 
   # User
