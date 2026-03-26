@@ -9,6 +9,7 @@
     ../common
 
     ./hardware-configuration.nix
+    ./hardware-asahi.nix
 
     inputs.home-manager.nixosModules.home-manager
     inputs.niri.nixosModules.niri

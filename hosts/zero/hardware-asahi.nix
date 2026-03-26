@@ -30,7 +30,7 @@
   };
 
   # Enable 32-bit support if needed (gaming, some applications)
-  hardware.graphics.enable32Bit = true;
+  # hardware.graphics.enable32Bit = true;
 
   # Example configurations (uncomment and modify as needed):
 
