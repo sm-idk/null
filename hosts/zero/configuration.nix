@@ -1,6 +1,5 @@
 {
   inputs,
-  lib,
   pkgs,
   ...
 }:
@@ -17,11 +16,20 @@
     inputs.apple-silicon.nixosModules.apple-silicon-support
   ];
 
-  # boot.binfmt.emulatedSystems = [
-  #   "x86_64-linux"
-  # ];
-
-  # nixos.steam.enable = true;
+  nixpkgs.overlays = [
+    (import ./overlays.nix)
+  ]
+  ++ [
+    (final: prev: {
+      unstable = import inputs.nixpkgs-unstable {
+        inherit (prev.stdenvNoCC.hostPlatform) system;
+        overlays = (prev.overlays or [ ]);
+        config = {
+          allowUnsupportedSystem = true;
+        };
+      };
+    })
+  ];
 
   home-manager = {
     useGlobalPkgs = true;
@@ -39,14 +47,12 @@
   # Specify path to peripheral firmware files for declarative management
   hardware.asahi.peripheralFirmwareDirectory = ./firmware;
 
-  # Allow building aarch64 packCurrent RootFS path set to '/run/fex-emu/rootfs'
   nixpkgs.config.allowUnsupportedSystem = true;
 
-  # nixos-muvm-fex packages for x86 emulation
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs.unstable; [
+    distrobox
     muvm
-    fex
-    fex-x86-rootfs
+    xorg.xhost
 
     asahi-audio
     asahi-bless
@@ -56,6 +62,13 @@
     erofs-utils
     m1n1
   ];
+
+  # Podman for distrobox containers
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+    defaultNetwork.settings.dns_enabled = true;
+  };
 
   programs = {
     wireshark = {
@@ -73,7 +86,6 @@
   };
 
   # System services
-  # services.scx.enable = true;
   services.fstrim.enable = true;
 
   # The state version is required and should stay at the version you
