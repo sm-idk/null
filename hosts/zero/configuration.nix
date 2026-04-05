@@ -1,8 +1,4 @@
-{
-  inputs,
-  pkgs,
-  ...
-}:
+{ inputs, ... }:
 {
   imports = [
     ../common
@@ -14,22 +10,10 @@
     inputs.niri.nixosModules.niri
     inputs.stylix.nixosModules.stylix
     inputs.apple-silicon.nixosModules.apple-silicon-support
+    inputs.steam-asahi.nixosModules.default
   ];
 
-  nixpkgs.overlays = [
-    (import ./overlays.nix)
-  ]
-  ++ [
-    (final: prev: {
-      unstable = import inputs.nixpkgs-unstable {
-        inherit (prev.stdenvNoCC.hostPlatform) system;
-        overlays = (prev.overlays or [ ]);
-        config = {
-          allowUnsupportedSystem = true;
-        };
-      };
-    })
-  ];
+  programs.steam-asahi.enable = true;
 
   home-manager = {
     useGlobalPkgs = true;
@@ -48,27 +32,6 @@
   hardware.asahi.peripheralFirmwareDirectory = ./firmware;
 
   nixpkgs.config.allowUnsupportedSystem = true;
-
-  environment.systemPackages = with pkgs.unstable; [
-    distrobox
-    muvm
-    xorg.xhost
-
-    asahi-audio
-    asahi-bless
-    asahi-fwextract
-    squashfuse
-    squashfsTools
-    erofs-utils
-    m1n1
-  ];
-
-  # Podman for distrobox containers
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-    defaultNetwork.settings.dns_enabled = true;
-  };
 
   programs = {
     wireshark = {
