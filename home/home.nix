@@ -14,6 +14,8 @@
       file
       ;
 
+    octave = pkgs.octaveFull.withPackages (p: [ p.symbolic ]);
+
     inherit (pkgs.unstable)
       onlyoffice-desktopeditors
       transmission_4-qt
@@ -25,7 +27,7 @@
       gnome-frog
       rpcs3
 
-      octaveFull
+      gimp2
       ;
 
     helium = inputs.euvlok-pkgs.legacyPackages.${pkgs.system}.helium-browser;
