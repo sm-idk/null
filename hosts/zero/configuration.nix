@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, lib, ... }:
 {
   imports = [
     ../common
@@ -15,6 +15,8 @@
 
   programs.steam-asahi.enable = true;
 
+  programs.kdeconnect.enable = true;
+
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
@@ -30,6 +32,16 @@
 
   # Specify path to peripheral firmware files for declarative management
   hardware.asahi.peripheralFirmwareDirectory = ./firmware;
+
+  # Build the heavy asahi packages (kernel, u-boot, m1n1, asahi-fwextract)
+  # against nixpkgs-unstable so we hit the nixos-apple-silicon Cachix cache.
+  # The CI at github.com/nix-community/nixos-apple-silicon only publishes
+  # builds against unstable variants on `main`, so 25.11-built kernels miss.
+  hardware.asahi.pkgs = lib.mkForce (import inputs.nixpkgs-unstable {
+    localSystem.system = "aarch64-linux";
+    config.allowUnfree = true;
+    overlays = [ inputs.apple-silicon.overlays.apple-silicon-overlay ];
+  });
 
   nixpkgs.config.allowUnsupportedSystem = true;
 
