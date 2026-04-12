@@ -23,13 +23,6 @@
 
   networking.hostName = "laptop";
 
-  programs = {
-    wireshark = {
-      enable = true;
-      dumpcap.enable = true;
-    };
-  };
-
   # System services (tailscale is configured in mandatory modules)
   services.scx.enable = true;
 

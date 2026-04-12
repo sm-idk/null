@@ -28,24 +28,10 @@
     pkgs.unstable.steam-run
   ];
 
-  programs = {
-    virt-manager.enable = true;
-    nh.enable = true;
-    niri.enable = true;
-    wireshark = {
-      enable = true;
-      dumpcap.enable = true;
-    };
-  };
-  users.groups.libvirtd.members = [ "bruno" ];
-  virtualisation.libvirtd.enable = true;
+  programs.nh.enable = true;
 
   # System services (tailscale is configured in mandatory modules)
-  services = {
-    printing.enable = true;
-    kismet.httpd.enable = true;
-    scx.enable = true;
-  };
+  services.scx.enable = true;
 
   # The state version is required and should stay at the version you
   # originally installed.

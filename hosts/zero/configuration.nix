@@ -37,11 +37,13 @@
   # against nixpkgs-unstable so we hit the nixos-apple-silicon Cachix cache.
   # The CI at github.com/nix-community/nixos-apple-silicon only publishes
   # builds against unstable variants on `main`, so 25.11-built kernels miss.
-  hardware.asahi.pkgs = lib.mkForce (import inputs.nixpkgs-unstable {
-    localSystem.system = "aarch64-linux";
-    config.allowUnfree = true;
-    overlays = [ inputs.apple-silicon.overlays.apple-silicon-overlay ];
-  });
+  hardware.asahi.pkgs = lib.mkForce (
+    import inputs.nixpkgs-unstable {
+      localSystem.system = "aarch64-linux";
+      config.allowUnfree = true;
+      overlays = [ inputs.apple-silicon.overlays.apple-silicon-overlay ];
+    }
+  );
 
   nixpkgs.config.allowUnsupportedSystem = true;
 
@@ -62,11 +64,6 @@
 
   # System services
   services.fstrim.enable = true;
-
-  programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = [ "bruno" ];
-  virtualisation.libvirtd.enable = true;
-  virtualisation.spiceUSBRedirection.enable = true;
 
   # The state version is required and should stay at the version you
   # originally installed.

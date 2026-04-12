@@ -12,10 +12,7 @@
     inputs.stylix.nixosModules.stylix
   ];
 
-  boot.binfmt.emulatedSystems = [
-    "aarch64-linux"
-    "x86_64-windows"
-  ];
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   nixos.steam.enable = true;
 
@@ -29,13 +26,9 @@
   networking.hostName = "null";
 
   # Hardware
-  hardware = {
-    uinput.enable = true;
-  };
+  hardware.uinput.enable = true;
 
-  programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = [ "bruno" ];
-  virtualisation.libvirtd.enable = true;
+  services.scx.enable = true;
 
   # The state version is required and should stay at the version you
   # originally installed.
