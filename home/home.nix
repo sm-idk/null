@@ -27,7 +27,7 @@
       gnome-frog
       rpcs3
 
-      gimp2
+      imhex
       ;
 
     helium = inputs.euvlok-pkgs.legacyPackages.${pkgs.system}.helium-browser;
