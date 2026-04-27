@@ -30,6 +30,10 @@
   boot.loader.efi.canTouchEfiVariables = false;
   boot.kernelParams = [ "appledrm.show_notch=1" ];
 
+  # Asahi/Apple Silicon systems commonly use 16K pages, where the NixOS
+  # default of 33 ASLR bits is invalid. 31 is the maximum for this layout.
+  boot.kernel.sysctl."vm.mmap_rnd_bits" = lib.mkForce 31;
+
   # Specify path to peripheral firmware files for declarative management
   hardware.asahi.peripheralFirmwareDirectory = ./firmware;
 
