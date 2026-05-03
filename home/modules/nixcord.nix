@@ -6,8 +6,10 @@
     enable = true;
 
     # Use Equibop (native ARM64 Discord client)
-    equibop.enable = true;
-    equibop.package = pkgs.unstable.equibop;
+    # equibop.enable = true;
+    # equibop.package = pkgs.unstable.equibop;
+    vesktop.enable = true;
+    vesktop.package = pkgs.unstable.vesktop;
 
     # Disable official Discord (not available on aarch64)
     discord.enable = false;
@@ -17,42 +19,47 @@
       autoUpdateNotification = true;
 
       plugins = {
-        toastNotifications = {
-          enable = true;
-          disableInStreamerMode = true;
-          determineServerNotifications = true;
-          friendServerNotifications = true;
-          renderImages = true;
-          maxNotifications = 3.0;
-          position = "bottom-left";
-          timeout = 5.0;
-          opacity = 100.0;
-          directMessages = true;
-          groupMessages = true;
-          streamingTreatment = 0.0;
-        };
+        # Equicord-only plugins. Keep these disabled while using Vencord-based clients.
+        # toastNotifications = {
+        #   enable = true;
+        #   disableInStreamerMode = true;
+        #   determineServerNotifications = true;
+        #   friendServerNotifications = true;
+        #   renderImages = true;
+        #   maxNotifications = 3.0;
+        #   position = "bottom-left";
+        #   timeout = 5.0;
+        #   opacity = 100.0;
+        #   directMessages = true;
+        #   groupMessages = true;
+        #   streamingTreatment = 0.0;
+        # };
+        # webpackTarball = {
+        #   enable = true;
+        #   patched = true;
+        # };
+        # equicordHelper = {
+        #   enable = true;
+        # };
+        # SaveFavoriteGIFs.enable = true;
+        # betterCommands = {
+        #   enable = true;
+        #   autoFillArguments = true;
+        #   allowNewlinesInCommands = true;
+        # };
+        # ghosted = {
+        #   enable = true;
+        #   showDmIcons = true;
+        # };
+        # newPluginsManager.enable = true;
+        # noNitroUpsell.enable = true;
+        # equicordToolbox.enable = true;
+
         # VCSupport.enable = true;
-        webpackTarball = {
-          enable = true;
-          patched = true;
-        };
-        equicordHelper = {
-          enable = true;
-        };
         disableDeepLinks.enable = true;
         webContextMenus.enable = true;
         # friendCloud.enable = true;
-        SaveFavoriteGIFs.enable = true;
-        betterCommands = {
-          enable = true;
-          autoFillArguments = true;
-          allowNewlinesInCommands = true;
-        };
         # arRPCBun.enable = true;
-        ghosted = {
-          enable = true;
-          showDmIcons = true;
-        };
         alwaysTrust = {
           enable = true;
           domain = true;
@@ -88,9 +95,7 @@
           hyperLinkText = "{{NAME}}";
           useStickerHyperLinks = true;
         };
-        newPluginsManager.enable = true;
         # noModalAnimation.enable = true;
-        noNitroUpsell.enable = true;
         # polishWording = {
         #   enable = true;
         #   fixApostrophes = true;
@@ -138,7 +143,6 @@
         #   emojiList = true;
         #   serverBoost = true;
         # };
-        equicordToolbox.enable = true;
         # gifRoulette.enable = true;
       };
     };
