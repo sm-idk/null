@@ -20,20 +20,20 @@
 
       plugins = {
         # Equicord-only plugins. Keep these disabled while using Vencord-based clients.
-        toastNotifications = {
-          enable = true;
-          disableInStreamerMode = true;
-          determineServerNotifications = true;
-          friendServerNotifications = true;
-          renderImages = true;
-          maxNotifications = 3.0;
-          position = "bottom-left";
-          timeout = 5.0;
-          opacity = 100.0;
-          directMessages = true;
-          groupMessages = true;
-          streamingTreatment = 0.0;
-        };
+        # toastNotifications = {
+        #   enable = true;
+        #   disableInStreamerMode = true;
+        #   determineServerNotifications = true;
+        #   friendServerNotifications = true;
+        #   renderImages = true;
+        #   maxNotifications = 3.0;
+        #   position = "bottom-left";
+        #   timeout = 5.0;
+        #   opacity = 100.0;
+        #   directMessages = true;
+        #   groupMessages = true;
+        #   streamingTreatment = 0.0;
+        # };
         webpackTarball = {
           enable = true;
           patched = true;
