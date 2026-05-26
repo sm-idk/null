@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ./networking.nix
@@ -24,9 +29,12 @@
 
   home-manager.backupFileExtension = "bak";
 
-  # Hardware
+  # Hardware / desktop integration for Noctalia
   hardware.bluetooth.enable = true;
   powerManagement.enable = true;
+  services.upower.enable = true;
+  services.power-profiles-daemon.enable = lib.mkDefault true;
+  programs.kdeconnect.enable = true;
 
   # User
   users.mutableUsers = true;
