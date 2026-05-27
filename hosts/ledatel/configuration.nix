@@ -30,6 +30,11 @@
 
   programs.nh.enable = true;
 
+  hardware.sane = {
+    enable = true;
+    extraBackends = [ pkgs.sane-airscan ];
+  };
+
   # System services (tailscale is configured in mandatory modules)
   services.scx.enable = true;
 
