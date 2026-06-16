@@ -8,8 +8,6 @@
     # Use Equibop (native ARM64 Discord client)
     equibop.enable = true;
     equibop.package = pkgs.unstable.equibop;
-    # vesktop.enable = true;
-    # vesktop.package = pkgs.unstable.vesktop;
 
     # Disable official Discord (not available on aarch64)
     discord.enable = false;
@@ -19,21 +17,6 @@
       autoUpdateNotification = true;
 
       plugins = {
-        # Equicord-only plugins. Keep these disabled while using Vencord-based clients.
-        # toastNotifications = {
-        #   enable = true;
-        #   disableInStreamerMode = true;
-        #   determineServerNotifications = true;
-        #   friendServerNotifications = true;
-        #   renderImages = true;
-        #   maxNotifications = 3.0;
-        #   position = "bottom-left";
-        #   timeout = 5.0;
-        #   opacity = 100.0;
-        #   directMessages = true;
-        #   groupMessages = true;
-        #   streamingTreatment = 0.0;
-        # };
         webpackTarball = {
           enable = true;
           patched = true;
@@ -92,13 +75,6 @@
           hyperLinkText = "{{NAME}}";
           useStickerHyperLinks = true;
         };
-        polishWording = {
-          enable = true;
-          fixApostrophes = true;
-          fixCapitalization = true;
-          fixPunctuation = true;
-          fixPunctuationFrequency = 100.0;
-        };
         favoriteGifSearch = {
           enable = true;
           searchOption = "hostandpath";
@@ -131,6 +107,10 @@
         webKeybinds.enable = true;
         webScreenShareFixes.enable = true;
         youtubeAdblock.enable = true;
+        betterGifLoad = {
+          enable = true;
+          gifQuality = 2;
+        };
       };
     };
   };
