@@ -53,7 +53,13 @@
     ];
   };
 
-  programs.niri.enable = true;
+  programs.niri = {
+    enable = true;
+    # Use nixpkgs' niri so we can substitute from cache.nixos.org on all hosts
+    # (notably aarch64/zero). niri-flake's own Cachix is x86_64-only, so its
+    # default package makes zero build niri locally.
+    package = pkgs.niri;
+  };
 
   # Enable Wireshark with USB support
   programs.wireshark = {
