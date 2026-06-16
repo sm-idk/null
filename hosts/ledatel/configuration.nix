@@ -24,6 +24,7 @@
   networking.hostName = "ledatel";
 
   environment.systemPackages = [
+    pkgs.cups-filters
     pkgs.unstable.netdiscover
     pkgs.unstable.steam-run
   ];
@@ -34,6 +35,8 @@
     enable = true;
     extraBackends = [ pkgs.sane-airscan ];
   };
+
+  programs.system-config-printer.enable = true;
 
   # System services (tailscale is configured in mandatory modules)
   services.scx.enable = true;
