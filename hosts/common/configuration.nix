@@ -61,6 +61,10 @@
     package = pkgs.niri;
   };
 
+  # Let Noctalia's polkit-agent plugin own the auth agent; niri-flake also
+  # provides one by default, and running two agents can make auth prompts flaky.
+  systemd.user.services.niri-flake-polkit.enable = lib.mkForce false;
+
   # Enable Wireshark with USB support
   programs.wireshark = {
     enable = true;

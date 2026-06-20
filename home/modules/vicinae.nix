@@ -2,7 +2,10 @@
 {
   programs.vicinae = {
     enable = true;
-    systemd.autoStart = true;
+    systemd = {
+      enable = true;
+      autoStart = true;
+    };
     package = pkgs.vicinae;
 
     settings = {
