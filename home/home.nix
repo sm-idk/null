@@ -18,18 +18,13 @@
 
     inherit (pkgs.unstable)
       onlyoffice-desktopeditors
-      transmission_4-qt
       signal-desktop
       bottles
       prismlauncher
       yt-dlp
-      mpv
       gnome-frog
       rpcs3
-
-      imhex
       ;
-
   };
 
   programs.bash.enable = true;
