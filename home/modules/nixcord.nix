@@ -24,7 +24,7 @@
         equicordHelper = {
           enable = true;
         };
-        SaveFavoriteGIFs.enable = true;
+        saveFavoriteGifs.enable = true;
         betterCommands = {
           enable = true;
           autoFillArguments = true;
@@ -52,7 +52,7 @@
           eagerLoad = true;
           organizeMenu = true;
         };
-        ClearURLs.enable = true;
+        clearUrls.enable = true;
         consoleJanitor = {
           enable = true;
           disableSpotifyLogger = true;
@@ -98,7 +98,7 @@
         };
         replaceGoogleSearch = {
           enable = true;
-          customEngineURL = "https://duckduckgo.com/?=";
+          customEngineUrl = "https://duckduckgo.com/?=";
         };
         spotifyCrack = {
           enable = true;

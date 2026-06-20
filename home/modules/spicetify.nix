@@ -7,7 +7,7 @@
   imports = [ inputs.spicetify-nix.homeManagerModules.default ];
   programs.spicetify.enable = true;
   programs.spicetify.enabledExtensions = builtins.attrValues {
-    inherit (inputs.spicetify-nix.legacyPackages.${pkgs.system}.extensions)
+    inherit (inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system}.extensions)
       adblock
       beautifulLyrics # Apple Music like Lyrics
       copyLyrics

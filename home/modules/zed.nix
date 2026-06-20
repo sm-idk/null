@@ -4,7 +4,7 @@
     inherit (pkgs)
       nil
       nixd
-      nixfmt-rfc-style
+      nixfmt
       bash-language-server
       shfmt
       ;
