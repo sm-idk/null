@@ -5,6 +5,7 @@
 
     ./hardware-configuration.nix
     ./hardware-asahi.nix
+    # ./overlays.nix
 
     inputs.home-manager.nixosModules.home-manager
     inputs.niri.nixosModules.niri
@@ -38,12 +39,12 @@
   # Specify path to peripheral firmware files for declarative management
   hardware.asahi.peripheralFirmwareDirectory = ./firmware;
 
-  # Build the heavy asahi packages (kernel, u-boot, m1n1, asahi-fwextract)
-  # against nixpkgs-unstable so we hit the nixos-apple-silicon Cachix cache.
-  # The CI at github.com/nix-community/nixos-apple-silicon only publishes
-  # builds against unstable variants on `main`, so 25.11-built kernels miss.
+  # Build the heavy Asahi packages (kernel, u-boot, m1n1, asahi-fwextract)
+  # against the exact nixpkgs revision used by nixos-apple-silicon CI, so their
+  # Cachix paths match. Using our own nixpkgs/nixpkgs-unstable rev changes the
+  # derivation hash and forces a local kernel build.
   hardware.asahi.pkgs = lib.mkForce (
-    import inputs.nixpkgs-unstable {
+    import inputs.apple-silicon.inputs.nixpkgs {
       localSystem.system = "aarch64-linux";
       config.allowUnfree = true;
       overlays = [ inputs.apple-silicon.overlays.apple-silicon-overlay ];
