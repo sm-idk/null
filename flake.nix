@@ -23,13 +23,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch
-
-    # quickshell = {
-    #   url = "github:outfoxxed/quickshell";
-    #   inputs.nixpkgs.follows = "nixpkgs-unstable";
-    # };
-
     noctalia = {
       url = "github:noctalia-dev/noctalia/legacy-v4";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
