@@ -6,6 +6,7 @@
       gnome-browser-connector.enable = true;
       # Disable gnome-keyring to use KeePassXC as unified secret service
       gnome-keyring.enable = lib.mkForce false;
+      evolution-data-server.enable = true;
       gnome-online-accounts.enable = true;
       gnome-remote-desktop.enable = true;
       gnome-settings-daemon.enable = true;
