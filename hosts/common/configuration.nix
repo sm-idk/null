@@ -1,6 +1,5 @@
 {
   inputs,
-  lib,
   pkgs,
   ...
 }:
@@ -32,13 +31,6 @@
 
   home-manager.backupFileExtension = "bak";
 
-  # Hardware / desktop integration for Noctalia
-  hardware.bluetooth.enable = true;
-  powerManagement.enable = true;
-  services.upower.enable = true;
-  services.power-profiles-daemon.enable = lib.mkDefault true;
-  programs.kdeconnect.enable = true;
-
   # User
   users.mutableUsers = true;
   users.users.bruno = {
@@ -52,18 +44,6 @@
       "seat"
     ];
   };
-
-  programs.niri = {
-    enable = true;
-    # Use nixpkgs' niri so we can substitute from cache.nixos.org on all hosts
-    # (notably aarch64/zero). niri-flake's own Cachix is x86_64-only, so its
-    # default package makes zero build niri locally.
-    package = pkgs.niri;
-  };
-
-  # Let Noctalia's polkit-agent plugin own the auth agent; niri-flake also
-  # provides one by default, and running two agents can make auth prompts flaky.
-  systemd.user.services.niri-flake-polkit.enable = lib.mkForce false;
 
   # Enable Wireshark with USB support
   programs.wireshark = {
