@@ -36,8 +36,6 @@
     extraBackends = [ pkgs.sane-airscan ];
   };
 
-  programs.system-config-printer.enable = true;
-
   # System services (tailscale is configured in mandatory modules)
   services.scx.enable = true;
 

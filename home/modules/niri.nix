@@ -3,18 +3,9 @@
   # imports = [ niri.homeModules.config ];
   home.packages = builtins.attrValues {
     inherit (pkgs)
-      apostrophe # Markdown Editor
-      decibels # Audio Player
-      loupe # Image Viewer
-      showtime # Video Player
-      wl-clipboard
-      nautilus
-      baobab
-      ;
-    inherit (pkgs)
-      xwayland-satellite
       hyprpaper
-      pavucontrol
+      wl-clipboard
+      xwayland-satellite
       ;
   };
 

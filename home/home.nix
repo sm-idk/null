@@ -9,12 +9,21 @@
   home.packages = builtins.attrValues {
 
     inherit (pkgs)
+      apostrophe # Markdown Editor
+      baobab
       btop
-      ghostty
+      decibels # Audio Player
       file
+      ghostty
+      loupe # Image Viewer
+      mousai # Shazam-like
+      nautilus
+      pavucontrol
+      showtime # Video Player
+      system-config-printer
+      virt-manager
+      wireshark
       ;
-
-    octave = pkgs.octaveFull.withPackages (p: [ p.symbolic ]);
 
     inherit (pkgs.unstable)
       onlyoffice-desktopeditors
@@ -23,7 +32,7 @@
       prismlauncher
       yt-dlp
       gnome-frog
-      rpcs3
+      # rpcs3
       ;
   };
 
