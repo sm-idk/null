@@ -53,13 +53,6 @@
 
   nixpkgs.config.allowUnsupportedSystem = true;
 
-  programs = {
-    wireshark = {
-      enable = true;
-      dumpcap.enable = true;
-    };
-  };
-
   services.power-profiles-daemon.enable = false;
 
   services.tlp.enable = true;

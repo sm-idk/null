@@ -6,5 +6,7 @@
     ./nix.nix
     ./noctalia.nix
     ./steam.nix
+    ./virtualisation.nix
+    ./wireshark.nix
   ];
 }

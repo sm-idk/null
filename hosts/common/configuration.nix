@@ -1,13 +1,6 @@
+{ inputs, ... }:
 {
-  inputs,
-  pkgs,
-  ...
-}:
-{
-  imports = [
-    ./networking.nix
-    inputs.self.nixosModules.default
-  ];
+  imports = [ inputs.self.nixosModules.default ];
 
   boot = {
     supportedFilesystems = [ "ntfs" ];
@@ -41,23 +34,9 @@
     ];
   };
 
-  # Enable Wireshark with USB support
-  programs.wireshark = {
-    enable = true;
-    package = pkgs.wireshark; # otherwise you get the CLI version
-    usbmon.enable = true; # enable USB capture
-    dumpcap.enable = true; # enable network capture
-  };
-  # Add your user account to the Wireshark group
-  users.groups.wireshark.members = [ "bruno" ];
-
   services.printing.enable = true;
 
   # Enable nix-ld for LSP servers downloaded by Zed
   programs.nix-ld.enable = true;
 
-  programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = [ "bruno" ];
-  virtualisation.libvirtd.enable = true;
-  virtualisation.spiceUSBRedirection.enable = true;
 }
