@@ -20,14 +20,10 @@
     initrd.verbose = false;
   };
 
-  # services.displayManager.ly.enable = true;
-  # services.displayManager.gdm.enable = true;
-  services.displayManager.cosmic-greeter.enable = true;
-  services.xserver.desktopManager.cinnamon.enable = true;
-  services.cinnamon.apps.enable = true;
-  # services.desktopManager.gnome.enable = true;
-  # services.desktopManager.cosmic.enable = true;
-  # services.desktopManager.cosmic.xwayland.enable = true;
+  services.displayManager = {
+    ly.enable = true;
+    defaultSession = "niri";
+  };
 
   home-manager.backupFileExtension = "bak";
 
