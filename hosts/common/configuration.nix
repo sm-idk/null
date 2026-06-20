@@ -13,10 +13,7 @@
     initrd.verbose = false;
   };
 
-  services.displayManager = {
-    ly.enable = true;
-    defaultSession = "niri";
-  };
+  services.displayManager.gdm.enable = true;
 
   home-manager.backupFileExtension = "bak";
 
