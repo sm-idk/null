@@ -3,6 +3,7 @@
     ./chromium
     ./git.nix
     ./hack.nix
+    ./helium.nix
     ./keepassxc.nix
     ./niri.nix
     ./nixcord.nix
