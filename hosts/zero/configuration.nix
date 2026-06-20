@@ -10,10 +10,11 @@
     inputs.niri.nixosModules.niri
     inputs.stylix.nixosModules.stylix
     inputs.apple-silicon.nixosModules.apple-silicon-support
-    inputs.steam-asahi.nixosModules.default
+    # inputs.steam-asahi.nixosModules.default
   ];
 
-  programs.steam-asahi.enable = true;
+  # programs.steam-asahi.enable = true;
+  boot.binfmt.emulatedSystems = [ "x86_64-linux" ];
 
   programs.kdeconnect.enable = true;
 
