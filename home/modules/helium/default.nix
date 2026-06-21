@@ -8,6 +8,8 @@ let
   helium = inputs.euvlok-pkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.helium-browser;
 in
 {
+  imports = [ ./extension-install.nix ];
+
   home.packages = [ helium ];
 
   xdg.dataFile."applications/helium-browser.desktop".text = ''

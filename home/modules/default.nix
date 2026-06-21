@@ -1,9 +1,9 @@
 {
   imports = [
-    ./chromium
+    # ./chromium
     ./git.nix
-    ./hack.nix
-    ./helium.nix
+    # ./hack.nix
+    ./helium
     ./keepassxc.nix
     ./niri.nix
     ./nixcord.nix
