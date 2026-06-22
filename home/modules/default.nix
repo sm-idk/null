@@ -1,6 +1,7 @@
 {
   imports = [
     # ./chromium
+    ./env.nix
     ./git.nix
     # ./hack.nix
     ./helium
