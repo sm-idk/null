@@ -18,7 +18,6 @@
   home-manager.backupFileExtension = "bak";
 
   # User
-  users.mutableUsers = true;
   users.users.bruno = {
     isNormalUser = true;
     hashedPassword = "$y$j9T$mvJlLXGvrwdfLcPVpgL2V.$tGJiUax1vrFDtDhtljQ.q749KII4oUnx0dJph3zJCj1";

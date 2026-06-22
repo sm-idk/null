@@ -151,18 +151,14 @@ in
           name = "Warsaw";
         };
         wallpaper = {
-          randomEnabled = false;
-          overviewEnabled = false;
           directory = "/home/bruno/Pictures/Wallpapers";
         };
         colorSchemes = {
           # predefinedScheme = "Rosepine";
           # predefinedScheme = "Ayu";
           predefinedScheme = "Rosey AMOLED";
-          generateTemplatesForPredefined = false;
         };
         dock.enabled = false;
-        overviewEnabled = true;
       };
     };
     niri.settings.binds = with config.lib.niri.actions; {

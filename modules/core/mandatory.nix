@@ -1,13 +1,9 @@
 _: {
-  zramSwap = {
-    enable = true;
-    algorithm = "zstd";
-  };
+  zramSwap.enable = true;
 
   # Localization
   console.keyMap = "pl2";
   time.timeZone = "Europe/Warsaw";
-  i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "pl_PL.UTF-8";
     LC_IDENTIFICATION = "pl_PL.UTF-8";
