@@ -6,9 +6,6 @@
     supportedFilesystems = [ "ntfs" ];
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
-    # kernelPackages = pkgs.linuxPackages_latest;
-    # kernelPackages = pkgs.linuxPackages_cachyos-lts;
-    # kernelPackages = pkgs.linuxPackages_cachyos-gcc;
     consoleLogLevel = 0;
     initrd.verbose = false;
   };

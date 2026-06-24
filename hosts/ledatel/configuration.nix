@@ -36,8 +36,15 @@
     extraBackends = [ pkgs.sane-airscan ];
   };
 
+  chaotic.mesa-git.enable = true;
+
   # System services (tailscale is configured in mandatory modules)
-  services.scx.enable = true;
+  services.scx = {
+    enable = true;
+    scheduler = "scx_rustland";
+  };
+
+  boot.kernelPackages = pkgs.linuxPackages_cachyos-gcc;
 
   # The state version is required and should stay at the version you
   # originally installed.

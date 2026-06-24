@@ -23,6 +23,8 @@
 
   networking.hostName = "laptop";
 
+  chaotic.mesa-git.enable = true;
+
   # System services (tailscale is configured in mandatory modules)
   services.scx.enable = true;
 

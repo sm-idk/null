@@ -14,6 +14,8 @@
     };
 
     # Third‑party custom flakes
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+
     niri = {
       url = "github:sodiboo/niri-flake";
     };

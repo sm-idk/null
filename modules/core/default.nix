@@ -1,5 +1,6 @@
-{
+{ inputs, ... }: {
   imports = [
+    inputs.chaotic.nixosModules.default
     ./audio.nix
     ./mandatory.nix
     ./niri.nix

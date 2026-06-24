@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [
     ../common
@@ -28,7 +28,12 @@
   # Hardware
   hardware.uinput.enable = true;
 
-  services.scx.enable = true;
+  services.scx = {
+    enable = true;
+    scheduler = "scx_lavd";
+  };
+
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
 
   # The state version is required and should stay at the version you
   # originally installed.
