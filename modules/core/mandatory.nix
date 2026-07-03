@@ -1,6 +1,13 @@
 _: {
   zramSwap.enable = true;
 
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 16384; # MiB = 16G
+    }
+  ];
+
   # Localization
   console.keyMap = "pl2";
   time.timeZone = "Europe/Warsaw";
