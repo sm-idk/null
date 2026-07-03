@@ -30,16 +30,16 @@
     #   package = pkgs.morewaita-icon-theme;
     # };
 
-    fonts = {
-      monospace = {
-        package = pkgs.nerd-fonts.jetbrains-mono;
-        name = "JetBrainsMono Nerd Font";
-      };
-      emoji = {
-        package = pkgs.noto-fonts-color-emoji;
-        name = "Noto Color Emoji";
-      };
-    };
+    # fonts = {
+    #   monospace = {
+    #     package = pkgs.nerd-fonts.jetbrains-mono;
+    #     name = "JetBrainsMono Nerd Font";
+    #   };
+    #   emoji = {
+    #     package = pkgs.noto-fonts-color-emoji;
+    #     name = "Noto Color Emoji";
+    #   };
+    # };
 
     overlays.enable = false;
 
