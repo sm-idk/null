@@ -16,20 +16,11 @@ in
 {
   imports = [ inputs.noctalia.homeModules.default ];
 
-  home.packages = with pkgs; [
-    # Plugin/runtime helpers:
-    wlr-randr
-    iproute2
-    sshfs
-    fuse3
-    unstable.tailscale
-  ];
-
   programs.noctalia = {
     enable = true;
     systemd.enable = true;
     settings = {
-      bar.main = {
+      bar.default = {
         capsule = true;
         capsule_padding = 20.0;
         end = [
