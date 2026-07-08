@@ -38,7 +38,6 @@
 
   chaotic.mesa-git.enable = true;
 
-  # System services (tailscale is configured in mandatory modules)
   services.scx = {
     enable = true;
     scheduler = "scx_rustland";

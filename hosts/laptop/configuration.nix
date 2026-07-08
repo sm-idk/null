@@ -25,7 +25,6 @@
 
   chaotic.mesa-git.enable = true;
 
-  # System services (tailscale is configured in mandatory modules)
   services.scx.enable = true;
 
   # The state version is required and should stay at the version you
