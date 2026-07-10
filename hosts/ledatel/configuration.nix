@@ -24,7 +24,6 @@
   networking.hostName = "ledatel";
 
   environment.systemPackages = [
-    pkgs.cups-filters
     pkgs.unstable.netdiscover
     pkgs.unstable.steam-run
   ];
@@ -44,6 +43,10 @@
   };
 
   boot.kernelPackages = pkgs.linuxPackages_cachyos-gcc;
+  boot.kernelParams = [
+    "i915.enable_psr=0"
+    "i915.enable_fbc=0"
+  ];
 
   # The state version is required and should stay at the version you
   # originally installed.

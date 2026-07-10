@@ -25,10 +25,12 @@
       "video"
       "wheel"
       "seat"
+      "lp"
     ];
   };
 
   services.printing.enable = true;
+  services.avahi.enable = true;
 
   # Enable nix-ld for LSP servers downloaded by Zed
   programs.nix-ld.enable = true;
