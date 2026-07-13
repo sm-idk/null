@@ -60,7 +60,6 @@ in
 
       shell = {
         app_icon_colorize = true;
-        avatar_path = "/home/bruno/Pictures/Wallpapers/ys6ma3bk2wdg1.png";
         font_family = "Unifont";
         polkit_agent = true;
         settings_show_advanced = true;
@@ -72,7 +71,6 @@ in
         wallpaper_scheme = "m3-monochrome";
       };
 
-      wallpaper.default.path = "/home/bruno/Pictures/Wallpapers/1760035282328330.jpg";
     };
   };
 

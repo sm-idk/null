@@ -107,10 +107,6 @@
         webKeybinds.enable = true;
         webScreenShareFixes.enable = true;
         youtubeAdblock.enable = true;
-        betterGifLoad = {
-          enable = true;
-          gifQuality = 2;
-        };
       };
     };
   };
