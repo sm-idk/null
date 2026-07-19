@@ -96,6 +96,7 @@
       "Super+D".action = switch-preset-column-width;
       "Super+V".action = toggle-window-floating;
       "Super+F".action = toggle-overview;
+      "Super+Shift+F".action = fullscreen-window;
       "Super+Space".action = switch-layout "next";
 
       "Super+Comma".action = consume-window-into-column;
