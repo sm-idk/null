@@ -8,7 +8,7 @@
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
-    open = true;
+    open = false;
     modesetting.enable = true;
     powerManagement.enable = true;
     powerManagement.finegrained = false;
@@ -20,18 +20,20 @@
       };
     };
 
+    # Old custom mkDriver pin — using chaotic nvidia_cachyos instead
+    # package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+    #   version = "580.82.09";
+    #   sha256_64bit = "sha256-Puz4MtouFeDgmsNMKdLHoDgDGC+QRXh6NVysvltWlbc=";
+    #   sha256_aarch64 = "sha256-6tHiAci9iDTKqKrDIjObeFdtrlEwjxOHJpHfX4GMEGQ=";
+    #   openSha256 = "sha256-YB+mQD+oEDIIDa+e8KX1/qOlQvZMNKFrI5z3CoVKUjs=";
+    #   settingsSha256 = "sha256-um53cr2Xo90VhZM1bM2CH4q9b/1W2YOqUcvXPV6uw2s=";
+    #   persistencedSha256 = "sha256-lbYSa97aZ+k0CISoSxOMLyyMX//Zg2Raym6BC4COipU=";
+    # };
     # Temporary until at the very least https://github.com/NixOS/nixpkgs/pull/439793 merged
     # package = pkgs.nvidia-patch.patch-nvenc (
     #   pkgs.nvidia-patch.patch-fbc config.boot.kernelPackages.nvidiaPackages.beta\
     # );
-    package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-      version = "580.82.09";
-      sha256_64bit = "sha256-Puz4MtouFeDgmsNMKdLHoDgDGC+QRXh6NVysvltWlbc=";
-      sha256_aarch64 = "sha256-6tHiAci9iDTKqKrDIjObeFdtrlEwjxOHJpHfX4GMEGQ=";
-      openSha256 = "sha256-YB+mQD+oEDIIDa+e8KX1/qOlQvZMNKFrI5z3CoVKUjs=";
-      settingsSha256 = "sha256-um53cr2Xo90VhZM1bM2CH4q9b/1W2YOqUcvXPV6uw2s=";
-      persistencedSha256 = "sha256-lbYSa97aZ+k0CISoSxOMLyyMX//Zg2Raym6BC4COipU=";
-    };
+    package = pkgs.nvidia_cachyos;
   };
 
   environment.sessionVariables = {

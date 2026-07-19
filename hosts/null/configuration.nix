@@ -4,6 +4,7 @@
     ../common
 
     ./nvidia.nix
+    ./hardware-acceleration.nix
     ./hardware-configuration.nix
 
     inputs.home-manager.nixosModules.home-manager
