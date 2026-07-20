@@ -22,7 +22,7 @@ in
     settings = {
       bar.default = {
         capsule = true;
-        capsule_padding = 20.0;
+        capsule_padding = 9.0;
         end = [
           "media"
           "tray"

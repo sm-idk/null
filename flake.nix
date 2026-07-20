@@ -42,7 +42,8 @@
 
     euvlok-pkgs.url = "github:euvlok/pkgs";
 
-    apple-silicon.url = "github:nix-community/nixos-apple-silicon";
+    # apple-silicon.url = "github:nix-community/nixos-apple-silicon";
+    apple-silicon.url = "github:nix-community/nixos-apple-silicon/8c666069ee3070445b1040f9aa357b78c08eb9ce";
 
     steam-asahi.url = "github:sm-idk/steam-asahi";
   };

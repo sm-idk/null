@@ -17,6 +17,8 @@
   # programs.steam-asahi.enable = true;
   boot.binfmt.emulatedSystems = [ "x86_64-linux" ];
 
+  hardware.asahi.enable = true;
+
   programs.kdeconnect.enable = true;
 
   home-manager = {
