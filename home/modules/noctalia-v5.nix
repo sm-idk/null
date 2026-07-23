@@ -70,7 +70,6 @@ in
         source = "wallpaper";
         wallpaper_scheme = "m3-monochrome";
       };
-
     };
   };
 
