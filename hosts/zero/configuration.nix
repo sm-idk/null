@@ -11,11 +11,16 @@
     inputs.niri.nixosModules.niri
     inputs.stylix.nixosModules.stylix
     inputs.apple-silicon.nixosModules.apple-silicon-support
-    # inputs.steam-asahi.nixosModules.default
+    inputs.steam-asahi.nixosModules.default
   ];
 
-  # programs.steam-asahi.enable = true;
-  boot.binfmt.emulatedSystems = [ "x86_64-linux" ];
+  programs.steam-asahi = {
+    enable = true;
+    backend = "arm64";
+    customSteamHomeDir = "steam-asahi-arm64-test-home";
+  };
+
+  users.users.bruno.extraGroups = [ "kvm" ];
 
   hardware.asahi.enable = true;
 
@@ -38,13 +43,20 @@
   # default of 33 ASLR bits is invalid. 31 is the maximum for this layout.
   boot.kernel.sysctl."vm.mmap_rnd_bits" = lib.mkForce 31;
 
-  # Specify path to peripheral firmware files for declarative management
-  hardware.asahi.peripheralFirmwareDirectory = ./firmware;
+  # Apple peripheral firmware is machine-specific and non-redistributable, so
+  # keep it on the ESP rather than in this public Git repository. Pinning its
+  # NAR hash lets Nix import and verify the local tree during pure evaluation.
+  hardware.asahi.peripheralFirmwareDirectory = (
+    builtins.fetchTree {
+      type = "path";
+      path = "/boot/vendorfw";
+      narHash = "sha256-+wWFUcUVfXWgP+VulkmC0Aci3zZKkIBHHqwUaAagGXE=";
+    }
+  ).outPath;
 
-  # Build the heavy Asahi packages (kernel, u-boot, m1n1, asahi-fwextract)
-  # against the exact nixpkgs revision used by nixos-apple-silicon CI, so their
-  # Cachix paths match. Using our own nixpkgs/nixpkgs-unstable rev changes the
-  # derivation hash and forces a local kernel build.
+  # Build the heavy Asahi packages against the nixpkgs revision tested by the
+  # pinned nixos-apple-silicon input. Using our own nixpkgs revision changes the
+  # derivation hashes and may force additional local builds.
   hardware.asahi.pkgs = lib.mkForce (
     import inputs.apple-silicon.inputs.nixpkgs {
       localSystem.system = "aarch64-linux";

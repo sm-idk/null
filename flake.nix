@@ -43,9 +43,15 @@
     euvlok-pkgs.url = "github:euvlok/pkgs";
 
     # apple-silicon.url = "github:nix-community/nixos-apple-silicon";
-    apple-silicon.url = "github:nix-community/nixos-apple-silicon/8c666069ee3070445b1040f9aa357b78c08eb9ce";
+    # Keep this pinned: Apple Silicon updates can replace the shared m1n1 boot.bin.
+    apple-silicon.url = "github:nix-community/nixos-apple-silicon/3902c801519264191a7c3dfec8dd1f9faeb38fd5";
 
-    steam-asahi.url = "github:sm-idk/steam-asahi";
+    steam-asahi = {
+      # Use the local checkout while developing and testing changes.
+      # url = "path:/home/bruno/git/steam-asahi";
+      url = "github:sm-idk/steam-asahi/feature/arm64-client";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs: {

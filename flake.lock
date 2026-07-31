@@ -6,17 +6,17 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1783079127,
-        "narHash": "sha256-mNuifmp/gJ73tsLDAf6Q4iwhuDCSrS88G7BlvAsa42E=",
+        "lastModified": 1784496018,
+        "narHash": "sha256-wmEC6UPwmBCILILU8iCdzdd74P1eA8P5gFGYnptA4qU=",
         "owner": "nix-community",
         "repo": "nixos-apple-silicon",
-        "rev": "8c666069ee3070445b1040f9aa357b78c08eb9ce",
+        "rev": "3902c801519264191a7c3dfec8dd1f9faeb38fd5",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
         "repo": "nixos-apple-silicon",
-        "rev": "8c666069ee3070445b1040f9aa357b78c08eb9ce",
+        "rev": "3902c801519264191a7c3dfec8dd1f9faeb38fd5",
         "type": "github"
       }
     },
@@ -381,11 +381,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1782467914,
-        "narHash": "sha256-pGvFkM8N0xEkIIXDe5YYfbEAvHrk4IxBrjB/x8OomhE=",
+        "lastModified": 1783224372,
+        "narHash": "sha256-8i/87eeoqiGE4yOTjwSA3Eh/ziJRQEmd/unYU+K27sk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e73de5be04e0eff4190a1432b946d469c794e7b4",
+        "rev": "d407951447dcd00442e97087bf374aad70c04cea",
         "type": "github"
       },
       "original": {
@@ -521,22 +521,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_6": {
-      "locked": {
-        "lastModified": 1783604885,
-        "narHash": "sha256-tzMgSkV7kljEkqIjlgV6F+n+xD+/a35Db8bs7a4BFAo=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "767b0d3ec98a143ad9ed7dfc0d5553510ac27133",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "noctalia": {
       "inputs": {
         "nixpkgs": [
@@ -621,18 +605,21 @@
     },
     "steam-asahi": {
       "inputs": {
-        "nixpkgs": "nixpkgs_6"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
-        "lastModified": 1783937169,
-        "narHash": "sha256-d+0Bfwtt7HmLW2Usnw9XHA/uyNVHy3G1wT1yNQWuyCs=",
+        "lastModified": 1785414049,
+        "narHash": "sha256-UeEWnm3g1HRmM6c5FrICDyI6gqFF8hbA73w9FDsX05E=",
         "owner": "sm-idk",
         "repo": "steam-asahi",
-        "rev": "5e538015e267bfd57ccf49e5ed0660ac7fd9f8ea",
+        "rev": "de3e3df6ddae377139e0ac73d5b7b26e1c64dea9",
         "type": "github"
       },
       "original": {
         "owner": "sm-idk",
+        "ref": "feature/arm64-client",
         "repo": "steam-asahi",
         "type": "github"
       }
