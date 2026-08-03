@@ -28,7 +28,10 @@
     pkgs.unstable.steam-run
   ];
 
-  programs.nh.enable = true;
+  programs.nh = {
+    enable = true;
+    package = pkgs.unstable.nh;
+  };
 
   hardware.sane = {
     enable = true;
@@ -42,7 +45,8 @@
     scheduler = "scx_rustland";
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_cachyos-gcc;
+  # boot.kernelPackages = pkgs.linuxPackages_cachyos-gcc;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
   boot.kernelParams = [
     "i915.enable_psr=0"
     "i915.enable_fbc=0"
