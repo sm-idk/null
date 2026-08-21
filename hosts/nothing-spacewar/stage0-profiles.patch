@@ -1,0 +1,142 @@
+diff --git a/src/find_systems.rs b/src/find_systems.rs
+--- a/src/find_systems.rs
++++ b/src/find_systems.rs
+@@ -3,10 +3,10 @@
+ use glob::{PatternError, glob};
+ use serde::{Deserialize, Serialize};
+ use std::{
++    collections::HashSet,
+     fs,
+     path::{Path, PathBuf},
+ };
+-use tap::Tap;
+ 
+ #[derive(Debug, Clone)]
+ pub struct SystemClosure {
+@@ -61,60 +61,80 @@
+     let store_path = rootfs().join("nix/store");
+     let profiles_dir = rootfs().join("nix/var/nix/profiles");
+ 
+-    let has_profiles = {
+-        let paths = glob_path(profiles_dir.join("system*"));
+-        match paths {
+-            Ok(v) => !v.is_empty(),
+-            Err(_) => false,
+-        }
+-    };
++    let mut generation_links = glob_path(profiles_dir.join("system-*-link"))?;
++    generation_links.sort_by_key(|path| profile_generation(path).unwrap_or(usize::MAX));
++
++    let current = resolve_profile_link(&profiles_dir.join("system"));
++    let mut profile_paths: Vec<PathBuf> = generation_links
++        .into_iter()
++        .filter_map(|path| resolve_profile_link(&path))
++        .filter(|path| current.as_ref() != Some(path))
++        .collect();
++
++    if let Some(current) = current {
++        profile_paths.insert(0, current);
++    }
+ 
+-    let systems: Vec<SystemClosure> = if has_profiles {
+-        let system = fs::read_link(profiles_dir.join("system"))?;
+-        let other_systems = glob_path(profiles_dir.join("system-*"))?.tap_mut(|systems| {
+-            systems.sort_by(|a, b| {
+-                let get_index = |x: &PathBuf| -> usize {
+-                    x.file_name()
+-                        .unwrap()
+-                        .display()
+-                        .to_string()
+-                        .split('-')
+-                        .next_back()
+-                        .expect("Parse system profile index")
+-                        .parse()
+-                        .expect("Parse system profile index")
+-                };
+-
+-                get_index(a).cmp(&get_index(b))
+-            });
+-        });
+-
+-        vec![system]
+-            .tap_mut(|systems| systems.extend(other_systems))
+-            .into_iter()
+-            .filter_map(|x| read_boot_json(&x.join("boot.json")).ok())
+-            .filter(|x| !x.label.contains("stage0"))
+-            .collect()
+-    } else {
+-        let paths = glob_path(store_path.join("*-nixos-system*"))?;
+-
+-        paths
+-            .into_iter()
+-            .filter_map(|x| read_boot_json(&x.join("boot.json")).ok())
+-            .collect()
+-    };
++    // Repeated deployments of an unchanged system can leave several profile
++    // generations pointing at the same store closure. Show that closure only
++    // once while preserving the current-generation-first ordering.
++    let mut seen = HashSet::new();
++    profile_paths.retain(|path| seen.insert(path.clone()));
++
++    let mut systems = read_systems(profile_paths);
++
++    // Broken, dangling, or otherwise unreadable profiles must not prevent a
++    // boot. Fall back to discovering all system closures in the store.
++    if systems.is_empty() {
++        systems = read_systems(glob_path(store_path.join("*-nixos-system*"))?);
++    }
++
++    // Filter out the stage0 specialisation itself.
++    systems.retain(|system| !system.label.contains("stage0"));
+ 
+     if systems.is_empty() {
+         return Err(anyhow!("Could not find any system closures in rootfs"));
+     }
+ 
+-    // Filter out stage0 specialisation
+-    let systems = systems
++    Ok(systems)
++}
++
++fn read_systems(paths: Vec<PathBuf>) -> Vec<SystemClosure> {
++    paths
+         .into_iter()
+-        .filter(|x| !x.label.contains("stage0"))
+-        .collect();
++        .filter_map(|path| read_boot_json(&path.join("boot.json")).ok())
++        .collect()
++}
+ 
+-    Ok(systems)
++fn profile_generation(path: &Path) -> Option<usize> {
++    path.file_name()?
++        .to_str()?
++        .strip_prefix("system-")?
++        .strip_suffix("-link")?
++        .parse()
++        .ok()
++}
++
++fn resolve_profile_link(path: &Path) -> Option<PathBuf> {
++    let mut path = path.to_path_buf();
++
++    // `system` points to a relative generation link, which in turn points to
++    // an absolute store path. Absolute targets belong to the mounted rootfs,
++    // not to stage0's own initrd root.
++    for _ in 0..8 {
++        let target = fs::read_link(&path).ok()?;
++        path = if target.is_absolute() {
++            rootfs().join(target.strip_prefix("/").ok()?)
++        } else {
++            path.parent()?.join(target)
++        };
++
++        if !path.is_symlink() {
++            return Some(path);
++        }
++    }
++
++    None
+ }
+ 
+ fn glob_path(path: PathBuf) -> Result<Vec<PathBuf>, PatternError> {

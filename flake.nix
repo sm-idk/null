@@ -14,6 +14,8 @@
     };
 
     # Third‑party custom flakes
+    nixos-mobile.url = "git+https://codeberg.org/Whoman/nixos-mobile.git";
+
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     niri = {
