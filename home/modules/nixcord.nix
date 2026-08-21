@@ -75,10 +75,10 @@
           hyperLinkText = "{{NAME}}";
           useStickerHyperLinks = true;
         };
-        favoriteGifSearch = {
-          enable = true;
-          searchOption = "hostandpath";
-        };
+        # favoriteGifSearch = {
+        #   enable = true;
+        #   searchOption = "hostandpath";
+        # };
         noTypingAnimation.enable = true;
         platformIndicators = {
           enable = true;
