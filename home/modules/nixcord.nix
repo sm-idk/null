@@ -28,7 +28,7 @@
         betterCommands = {
           enable = true;
           autoFillArguments = true;
-          allowNewlinesInCommands = true;
+          # allowNewlinesInCommands = true;
         };
         ghosted = {
           enable = true;
