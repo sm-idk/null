@@ -21,6 +21,7 @@ in
     systemd.enable = true;
     settings = {
       bar.default = {
+      # bar.main = {
         capsule = true;
         capsule_padding = 9.0;
         end = [
@@ -38,8 +39,9 @@ in
         radius_top_left = 0;
         radius_top_right = 0;
         start = [
-          "wallpaper"
           "workspaces"
+          "wallpaper"
+          "niri-displays"
         ];
       };
 
@@ -58,6 +60,8 @@ in
       location.auto_locate = true;
       lockscreen.blurred_desktop = true;
 
+      plugins.enabled = [ "raycursive/niri-displays" ];
+
       shell = {
         app_icon_colorize = true;
         font_family = "Unifont";
@@ -70,6 +74,8 @@ in
         source = "wallpaper";
         wallpaper_scheme = "m3-monochrome";
       };
+
+      widget.niri-displays.type = "raycursive/niri-displays:bar";
     };
   };
 
