@@ -54,13 +54,12 @@
         };
       };
 
-      outputs."HDMI-A-1" = {
-        scale = 1.0;
+      outputs."DP-3" = {
         focus-at-startup = true;
         mode = {
-          height = 1080;
-          refresh = 100.000;
-          width = 1920;
+          height = 1440;
+          refresh = 200.0;
+          width = 2560;
         };
       };
 
