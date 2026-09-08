@@ -18,8 +18,8 @@
       vulkan-validation-layers
       vulkan-extension-layer
 
-      # VA-API on NVIDIA (matches LIBVA_DRIVER_NAME = "nvidia" in nvidia.nix)
-      nvidia-vaapi-driver
+      # VA-API on NVIDIA is provided by hardware.nvidia.videoAcceleration
+      # (default); matches LIBVA_DRIVER_NAME = "nvidia" in nvidia.nix
       libva
       libva-utils
     ];
