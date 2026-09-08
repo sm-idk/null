@@ -9,20 +9,17 @@
   home.packages = builtins.attrValues {
 
     inherit (pkgs)
-      apostrophe # Markdown Editor
       baobab
       btop
       decibels # Audio Player
       file
       ghostty
       loupe # Image Viewer
-      mousai # Shazam-like
       nautilus
       pavucontrol
       showtime # Video Player
       system-config-printer
       virt-manager
-      wireshark
       ;
 
     inherit (pkgs.unstable)
@@ -30,9 +27,7 @@
       signal-desktop
       bottles
       prismlauncher
-      yt-dlp
-      gnome-frog
-      # rpcs3
+      rpcs3
       ;
   };
 

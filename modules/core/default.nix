@@ -8,6 +8,6 @@
     ./noctalia.nix
     ./steam.nix
     ./virtualisation.nix
-    ./wireshark.nix
+    # ./wireshark.nix
   ];
 }
