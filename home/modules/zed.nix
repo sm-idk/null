@@ -37,6 +37,11 @@
         120
       ];
       icon_theme = "Material Icon Theme";
+      theme = {
+        mode = "dark";
+        light = "One Dark";
+        dark = "Dark OLED";
+      };
       autosave = "on_focus_change";
       disable_ai = true;
       restore_on_startup = "none";
