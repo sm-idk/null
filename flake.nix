@@ -42,9 +42,7 @@
 
     euvlok-pkgs.url = "github:euvlok/pkgs";
 
-    # apple-silicon.url = "github:nix-community/nixos-apple-silicon";
-    # Keep this pinned: Apple Silicon updates can replace the shared m1n1 boot.bin.
-    apple-silicon.url = "github:nix-community/nixos-apple-silicon/3902c801519264191a7c3dfec8dd1f9faeb38fd5";
+    apple-silicon.url = "github:nix-community/nixos-apple-silicon";
 
     steam-asahi = {
       # Use the local checkout while developing and testing changes.
