@@ -29,6 +29,9 @@
   # Hardware
   hardware.uinput.enable = true;
 
+  # NT sync primitives for Proton (PROTON_USE_NTSYNC=1)
+  boot.kernelModules = [ "ntsync" ];
+
   services.scx = {
     enable = true;
     scheduler = "scx_lavd";
