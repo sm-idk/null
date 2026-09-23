@@ -15,7 +15,7 @@
       shuffle # Shuffle properly, using Fisher-Yates with zero bias
       aiBandBlocker
       catJamSynced
-      betterGenres
+      # betterGenres
       powerBar
       ;
   };
