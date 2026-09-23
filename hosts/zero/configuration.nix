@@ -17,6 +17,7 @@
   programs.steam-asahi = {
     enable = true;
     backend = "arm64";
+    cpuList = [ 0 1 2 3 4 5 6 7 ];
     customSteamHomeDir = "steam-asahi-arm64-test-home";
   };
 
