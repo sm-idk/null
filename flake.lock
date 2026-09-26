@@ -651,6 +651,26 @@
         "type": "github"
       }
     },
+    "noctalia-greeter": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1790148876,
+        "narHash": "sha256-l+DvmAMk0Wa6rJHsIhBeosP1I8zTtV1ku4sLdSI6nmE=",
+        "owner": "noctalia-dev",
+        "repo": "noctalia-greeter",
+        "rev": "ec03f710b0a93adcc64cfe0d434462ccb30639c6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "noctalia-greeter",
+        "type": "github"
+      }
+    },
     "nur": {
       "inputs": {
         "flake-parts": [
@@ -686,9 +706,9 @@
         "nixcord": "nixcord",
         "nixos-mobile": "nixos-mobile",
         "nixpkgs": "nixpkgs_6",
-        "nixpkgs-onlyoffice": "nixpkgs-onlyoffice",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "noctalia": "noctalia",
+        "noctalia-greeter": "noctalia-greeter",
         "spicetify-nix": "spicetify-nix",
         "steam-asahi": "steam-asahi",
         "stylix": "stylix"
@@ -722,14 +742,18 @@
         ]
       },
       "locked": {
-        "lastModified": 1790174713,
-        "narHash": "sha256-sPctLjhqTSrOkHe9GkTAY1ucvN3xb2CpdeVtj1lYUSU=",
-        "path": "/home/bruno/git/steam-asahi",
-        "type": "path"
+        "lastModified": 1790174689,
+        "narHash": "sha256-SxF8eW0SFRyU7g1RflebD/3ENr+stLqemmYs/57wMCU=",
+        "owner": "sm-idk",
+        "repo": "steam-asahi",
+        "rev": "d96664d6b0383a5c391457a4aa3c52971f03d891",
+        "type": "github"
       },
       "original": {
-        "path": "/home/bruno/git/steam-asahi",
-        "type": "path"
+        "owner": "sm-idk",
+        "ref": "feature/arm64-client",
+        "repo": "steam-asahi",
+        "type": "github"
       }
     },
     "stylix": {

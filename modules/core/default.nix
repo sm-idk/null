@@ -2,6 +2,7 @@
   imports = [
     inputs.chaotic.nixosModules.default
     ./audio.nix
+    ./greeter.nix
     ./mandatory.nix
     ./niri.nix
     ./nix.nix
