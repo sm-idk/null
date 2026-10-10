@@ -1,5 +1,5 @@
 #! /usr/bin/env nix-shell
-#! nix-shell -i bash -p jq curl wget unzip nix git p7zip sd ripgrep yq-go nixfmt-rfc-style gnugrep
+#! nix-shell -i bash -p jq curl wget unzip nix git p7zip sd ripgrep yq-go nixfmt gnugrep
 # shellcheck shell=bash
 #
 # Author: FlameFlag
@@ -347,7 +347,7 @@ process_extension() {
 	local hex_hash
 	hex_hash=$(sha256sum "${download_path}" | cut -d' ' -f1)
 	local hash
-	hash=$(nix hash to-sri --type sha256 "${hex_hash}")
+	hash=$(nix hash convert --hash-algo sha256 --to sri "${hex_hash}")
 
 	local unzip_dir="${temp_dir}/unzipped-${id}"
 	mkdir -p "${unzip_dir}"
@@ -616,10 +616,10 @@ EOF
 
 	echo "]" >> "${tmp_output_file}"
 
-	# Format the generated file with nixfmt-rfc-style
-	log_info "Formatting generated Nix file with nixfmt-rfc-style..."
-	if ! nixfmt-rfc-style "${tmp_output_file}" 2>/dev/null; then
-		log_warning "nixfmt-rfc-style failed or produced warnings, continuing anyway"
+	# Format the generated file with nixfmt
+	log_info "Formatting generated Nix file with nixfmt..."
+	if ! nixfmt "${tmp_output_file}" 2>/dev/null; then
+		log_warning "nixfmt failed or produced warnings, continuing anyway"
 	fi
 
 	# Validate syntax before replacing original file
