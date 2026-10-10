@@ -3,9 +3,9 @@
 
   inputs = {
     # First‑party (official)
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    nixpkgs.url = "https://channels.nixos.org/nixos-26.05/nixexprs.tar.zst";
 
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.zst";
 
     # Home‑manager
     home-manager = {
