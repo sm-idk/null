@@ -11,7 +11,6 @@
     inherit (pkgs)
       baobab
       btop
-      decibels # Audio Player
       file
       ghostty
       loupe # Image Viewer

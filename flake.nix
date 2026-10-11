@@ -47,6 +47,8 @@
 
     euvlok-pkgs.url = "github:euvlok/pkgs";
 
+    sonora.url = "github:sonorahq/sonora";
+
     apple-silicon.url = "github:nix-community/nixos-apple-silicon";
 
     steam-asahi = {

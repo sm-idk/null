@@ -9,7 +9,8 @@
     ./niri.nix
     ./nixcord.nix
     ./noctalia-v5.nix
-    ./spicetify.nix
+    ./sonora.nix
+    # ./spicetify.nix
     ./stylix.nix
     ./vicinae.nix
     ./zed.nix
