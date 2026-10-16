@@ -21,7 +21,10 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.bruno = ../../home/home.nix;
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {
+      inherit inputs;
+      btopPackage = pkgs.btop-cuda;
+    };
   };
 
   networking.hostName = "null";
