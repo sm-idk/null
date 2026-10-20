@@ -23,9 +23,9 @@
 
   networking.hostName = "ledatel";
 
-  environment.systemPackages = [
-    pkgs.unstable.netdiscover
-    pkgs.unstable.steam-run
+  environment.systemPackages = with pkgs.unstable; [
+    netdiscover
+    steam-run
   ];
 
   programs.nh = {
