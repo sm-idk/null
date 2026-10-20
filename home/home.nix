@@ -18,7 +18,6 @@
       pavucontrol
       showtime # Video Player
       system-config-printer
-      virt-manager
       ;
 
     inherit (pkgs.unstable)
