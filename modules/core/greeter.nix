@@ -4,11 +4,11 @@
 
   services.displayManager.noctalia-greeter = {
     enable = true;
-    cursorTheme.package = pkgs.bibata-cursors;
 
     settings = {
       session.default = "niri";
       cursor = {
+        path = pkgs.bibata-cursors;
         theme = "Bibata-Modern-Ice";
         size = 24;
       };
