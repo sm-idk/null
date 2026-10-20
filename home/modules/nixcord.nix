@@ -37,6 +37,7 @@
         newPluginsManager.enable = true;
         noNitroUpsell.enable = true;
         equicordToolbox.enable = true;
+        volumeBooster.enable = true;
 
         disableDeepLinks.enable = true;
         webContextMenus.enable = true;
