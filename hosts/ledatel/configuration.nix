@@ -28,11 +28,6 @@
     steam-run
   ];
 
-  programs.nh = {
-    enable = true;
-    package = pkgs.unstable.nh;
-  };
-
   hardware.sane = {
     enable = true;
     extraBackends = [ pkgs.sane-airscan ];
