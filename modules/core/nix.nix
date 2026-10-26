@@ -1,4 +1,6 @@
-{ inputs, ... }:
+{
+  inputs, pkgs, ...
+}:
 {
   # Set `pkgs.unstable` arg
   # _module.args.pkgs.unstable = import inputs.nixpkgs-unstable {
@@ -54,5 +56,8 @@
   # Disable built-in NixOS documentation
   documentation.nixos.enable = false;
 
-  programs.nh.enable = true;
+  programs.nh = {
+    enable = true;
+    package = pkgs.unstable.nh;
+  };
 }
