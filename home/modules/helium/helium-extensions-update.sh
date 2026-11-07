@@ -1,5 +1,5 @@
 #! /usr/bin/env nix-shell
-#! nix-shell -i bash -p jq curl wget unzip nix git p7zip sd ripgrep yq-go nixfmt gnugrep
+#! nix-shell -i bash -I nixpkgs=flake:nixpkgs -p jq curl wget unzip nix git p7zip sd ripgrep yq-go nixfmt gnugrep
 # shellcheck shell=bash
 #
 # Author: FlameFlag
@@ -51,7 +51,7 @@ log_error() {
 }
 
 log_info() {
-	printf "\033[0;34m[info] %s\033[0m\n" "${*}"
+	printf "\033[0;34m[info] %s\033[0m\n" "${*}" >&2
 }
 
 log_success() {
@@ -59,7 +59,7 @@ log_success() {
 }
 
 log_warning() {
-	printf "\033[0;33m[warning] %s\033[0m\n" "${*}"
+	printf "\033[0;33m[warning] %s\033[0m\n" "${*}" >&2
 }
 
 show_help() {
@@ -122,7 +122,7 @@ get_chromium_major_version() {
 	local major_version
 
 	# Try to get chromium version from nixpkgs
-	chromium_version=$(nix eval --impure --expr '
+	chromium_version=$(nix eval --impure -I nixpkgs=flake:nixpkgs --expr '
 		with import <nixpkgs> {};
 		lib.getVersion chromium
 	' 2>/dev/null | tr -d '"' || echo "")
@@ -133,7 +133,7 @@ get_chromium_major_version() {
 	fi
 
 	# Extract major version using Nix's lib.versions.major
-	major_version=$(nix eval --impure --expr "
+	major_version=$(nix eval --impure -I nixpkgs=flake:nixpkgs --expr "
 		with import <nixpkgs> {};
 		lib.versions.major \"${chromium_version}\"
 	" 2>/dev/null | tr -d '"' || echo "")
