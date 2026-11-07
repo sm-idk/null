@@ -99,7 +99,7 @@
         };
         replaceGoogleSearch = {
           enable = true;
-          customEngineUrl = "https://duckduckgo.com/?=";
+          customEngineUrl = "https://duckduckgo.com/?q=";
         };
         spotifyCrack = {
           enable = true;
