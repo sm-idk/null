@@ -44,6 +44,8 @@
 
     sonora.url = "github:sonorahq/sonora";
 
+    bootvine.url = "git+https://codeberg.org/wvhulle/bootvine";
+
     apple-silicon.url = "github:nix-community/nixos-apple-silicon";
 
     steam-asahi = {

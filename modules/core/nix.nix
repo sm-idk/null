@@ -32,12 +32,14 @@
         "https://noctalia.cachix.org"
         "https://nixos-apple-silicon.cachix.org"
         "https://eupkgs.cachix.org"
+        "https://wvhulle.cachix.org"
       ];
       extra-trusted-public-keys = [
         "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
         "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
         "nixos-apple-silicon.cachix.org-1:8psDu5SA5dAD7qA0zMy5UT292TxeEPzIz8VVEr2Js20="
         "eupkgs.cachix.org-1:V9Y0HdASNNSU9U6EkXhR1j85bZGRtNgW7wSyTiQrwGU="
+        "wvhulle.cachix.org-1:heXx8DZMiRsKUx6l1TxNoF+Nmtmz66QEdsonQzc1ir0="
       ];
 
       auto-optimise-store = true;
