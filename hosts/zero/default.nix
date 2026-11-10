@@ -2,7 +2,9 @@
 {
   zero = inputs.nixpkgs.lib.nixosSystem {
     specialArgs = { inherit inputs; };
-    system = "aarch64-linux";
-    modules = [ ./configuration.nix ];
+    modules = [
+      ./configuration.nix
+      { nixpkgs.hostPlatform = "aarch64-linux"; }
+    ];
   };
 }
