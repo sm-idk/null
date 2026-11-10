@@ -1,6 +1,21 @@
 { inputs, ... }:
 {
-  imports = [ inputs.self.nixosModules.default ];
+  imports = [
+    inputs.self.nixosModules.default
+    inputs.home-manager.nixosModules.home-manager
+    inputs.niri.nixosModules.niri
+    inputs.stylix.nixosModules.stylix
+    inputs.bootvine.nixosModules.default
+  ];
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.bruno = ../../home/home.nix;
+    extraSpecialArgs = { inherit inputs; };
+  };
+
+  services.bootvine.enable = true;
 
   boot = {
     supportedFilesystems = [ "ntfs" ];

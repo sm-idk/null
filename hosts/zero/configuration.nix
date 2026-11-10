@@ -7,9 +7,6 @@
     ./hardware-asahi.nix
     # ./overlays.nix
 
-    inputs.home-manager.nixosModules.home-manager
-    inputs.niri.nixosModules.niri
-    inputs.stylix.nixosModules.stylix
     inputs.apple-silicon.nixosModules.apple-silicon-support
     inputs.steam-asahi.nixosModules.default
   ];
@@ -26,13 +23,6 @@
   hardware.asahi.enable = true;
 
   programs.kdeconnect.enable = true;
-
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.bruno = ../../home/home.nix;
-    extraSpecialArgs = { inherit inputs; };
-  };
 
   networking.hostName = "zero";
 
