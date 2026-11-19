@@ -13,7 +13,12 @@
     programs = {
       steam = {
         enable = true;
+        package = pkgs.steam.override {
+          extraEnv = { MANGOHUD = "1"; GAMEMODERUN = "1";
+          };
+        };
         protontricks.enable = true;
+        # extraCompatPackages = [ pkgs.unstable.proton-ge-bin ];
         remotePlay.openFirewall = true;
         localNetworkGameTransfers.openFirewall = true;
       };
