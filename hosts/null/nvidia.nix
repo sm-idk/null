@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   ...
 }:
 {
@@ -10,7 +11,7 @@
     modesetting.enable = true;
     powerManagement.enable = true;
 
-    package = pkgs.nvidia_cachyos;
+    package = config.boot.kernelPackages.nvidiaPackages.cachyos;
   };
 
   environment.sessionVariables = {
