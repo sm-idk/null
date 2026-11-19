@@ -52,6 +52,8 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.flake.setNixPath = false;
+  chaotic.nyx.nixPath.enable = false;
 
   # Faster dbus implementation
   services.dbus.implementation = "broker";
