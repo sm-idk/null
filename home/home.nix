@@ -18,6 +18,7 @@
       pavucontrol
       showtime # Video Player
       system-config-printer
+      virt-manager
       ;
 
     inherit (pkgs.unstable)
@@ -25,6 +26,7 @@
       signal-desktop
       bottles
       prismlauncher
+      goverlay
       rpcs3
       ;
   };
