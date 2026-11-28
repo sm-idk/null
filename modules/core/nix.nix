@@ -34,6 +34,7 @@
         "https://nixos-apple-silicon.cachix.org"
         "https://eupkgs.cachix.org"
         "https://wvhulle.cachix.org"
+        "https://sonora.cachix.org"
       ];
       extra-trusted-public-keys = [
         "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
@@ -41,6 +42,7 @@
         "nixos-apple-silicon.cachix.org-1:8psDu5SA5dAD7qA0zMy5UT292TxeEPzIz8VVEr2Js20="
         "eupkgs.cachix.org-1:V9Y0HdASNNSU9U6EkXhR1j85bZGRtNgW7wSyTiQrwGU="
         "wvhulle.cachix.org-1:heXx8DZMiRsKUx6l1TxNoF+Nmtmz66QEdsonQzc1ir0="
+        "sonora.cachix.org-1:qbPeDsvZPbwUWHpQS5Oe0bjz5oHAVscHem+MCzwrc9Q="
       ];
 
       auto-optimise-store = true;
